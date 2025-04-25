@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Root variables  #0F172A;  1e3a8a  0c4b6e*/
+:root {
+  --primary-color: #0c4b6e;
+  --secondary-color: #6B7280;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #F8FAFC; /* Optional light bg for layout */
+}
+
+/* Utility classes using custom properties */
+.bg-primary {
+  background-color: var(--primary-color) !important;
+}
+
+.text-primary {
+  color: var(--primary-color) !important;
+}
+
+.text-secondary {
+  color: var(--secondary-color) !important;
+}
+
+/* Link hover effect */
+a {
+  transition: color 0.3s ease-in-out;
+}
+
+a:hover {
+  color: var(--primary-color);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --primary-color: #0c4b6e;
+  --secondary-color: #6B7280;
+  }
+}
+.btn-primary {
+  @apply bg-primary text-white font-medium px-4 py-2 rounded-md  hover:bg-opacity-80 transition;
+}
+.btn-secondary {
+  @apply bg-secondary text-white font-medium px-4 py-2 rounded-md hover:bg-gray-600 transition;
+}
+
+/* You can also customize scrollbars, selection color, etc. */
