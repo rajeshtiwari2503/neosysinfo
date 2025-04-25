@@ -5,22 +5,26 @@ import GradientCard from "./components/GradientBg";
 import { useRouter } from "next/navigation";
 
 export default function Page() {
-  const router=useRouter()
+  const router = useRouter();
+
   return (
     <Layout>
-      <div className=" text-gray-800">
+      <div className="text-gray-800">
 
         {/* Hero Section */}
         <section className="px-4 sm:px-6 lg:px-8 py-4 sm:py-8 md:py-8 lg:py-10 text-center">
           <GradientCard>
             <div className="max-w-6xl mx-auto text-center">
               <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 leading-tight text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">
-                Powerful SaaS Solutions for Business Growth
+                Streamlined After-Sales Service Management
               </h1>
               <p className="text-lg sm:text-xl md:text-2xl mb-8 text-secondary">
-                SaaS Techify offers next-gen CRM, ERP, and billing platforms to streamline operations and boost efficiency.
+                Neosys Infosystems delivers smart tools to manage warranties, service centers, and customer support — all in one platform.
               </p>
-              <button   onClick={() => router.push("/contact")}  className="bg-white   hover:bg-primary hover:text-white font-bold py-3 px-6 rounded-xl shadow-xl transition duration-300 transform hover:scale-105">
+              <button
+                onClick={() => router.push("/contact")}
+                className="bg-white hover:bg-primary hover:text-white font-bold py-3 px-6 rounded-xl shadow-xl transition duration-300 transform hover:scale-105"
+              >
                 Request a Demo
               </button>
             </div>
@@ -34,47 +38,35 @@ export default function Page() {
               Key Features
             </h2>
             <p className="text-gray-600 mt-4 text-lg">
-              Powered by our deep expertise in CRM, ERP, and cloud-based SaaS platforms.
+              A complete ecosystem to handle product servicing, customer interactions, and feedback loops.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               {
-                title: "CRM Automation",
-                description: "Manage leads, track customer interactions, and automate sales pipelines effortlessly.",
+                title: "Warranty Tracking",
+                description: "Easily manage product warranties and validate customer claims with accurate records.",
               },
               {
-                title: "Smart ERP",
-                description: "Integrate all your operations—from inventory to HR—into a single intuitive platform.",
+                title: "Service Request Management",
+                description: "Centralized dashboard to handle service complaints and technician assignments.",
               },
               {
-                title: "Real-Time Analytics",
-                description: "Gain deep insights with dashboards and reporting tools that track performance instantly.",
+                title: "Customer Support Hub",
+                description: "Efficient ticketing system for resolving customer issues faster and smarter.",
               },
               {
-                title: "Cloud-Based CRM",
-                description: "Access your customer data securely anytime, anywhere with our cloud-powered CRM.",
-              },
-              // {
-              //   title: "SaaS CRM ERP",
-              //   description: "A unified platform that combines SaaS-based CRM and ERP for complete business automation.",
-              // },
-              {
-                title: "Billing Software",
-                description: "Generate professional invoices, track payments, and manage subscriptions with ease.",
+                title: "Feedback & Ratings",
+                description: "Collect customer reviews and satisfaction ratings to improve service quality.",
               },
               {
-                title: "Business Automation",
-                description: "Automate repetitive tasks and streamline operations to maximize productivity.",
+                title: "Real-Time Notifications",
+                description: "Keep customers and service centers updated with automated alerts and messages.",
               },
-              // {
-              //   title: "Customer Relationship Management",
-              //   description: "Enhance customer relationships with personalized engagement and lifecycle tracking.",
-              // },
-              // {
-              //   title: "Enterprise Resource Planning",
-              //   description: "Optimize resources, manage supply chains, and drive growth through integrated ERP tools.",
-              // },
+              {
+                title: "Reports & Analytics",
+                description: "Monitor performance with detailed reports on service timelines, customer satisfaction, and more.",
+              },
             ].map((f, i) => (
               <GradientCard key={i}>
                 <h3 className="text-xl font-semibold mb-2 text-[#0c4b6e]">{f.title}</h3>
@@ -83,22 +75,46 @@ export default function Page() {
             ))}
           </div>
         </section>
-
+        {/* Scale & Impact Section */}
+        <section className="px-4 sm:px-6 lg:px-8 py-4 sm:py-8 md:py-8 lg:py-10 text-center">
+          <div className="max-w-6xl mx-auto text-center">
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">
+              Nationwide Reach & Real Results
+            </h2>
+            <p className="text-lg   text-gray-700 mb-8">
+              Neosys Infosystems supports after-sales operations across <span className="font-bold text-primary">600+ locations</span> and helps resolve over <span className="font-bold text-primary">1,000 service cases every month</span>.
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+              <GradientCard>
+                <h3 className="text-4xl font-extrabold text-primary mb-2">600+</h3>
+                <p className="text-gray-600">Service Locations Covered</p>
+              </GradientCard>
+              <GradientCard>
+                <h3 className="text-4xl font-extrabold text-primary mb-2">1,000+</h3>
+                <p className="text-gray-600">Service Requests Handled Monthly</p>
+              </GradientCard>
+              <GradientCard>
+                <h3 className="text-4xl font-extrabold text-primary mb-2">99.5%</h3>
+                <p className="text-gray-600">Customer Satisfaction Rate</p>
+              </GradientCard>
+            </div>
+          </div>
+        </section>
 
         {/* How It Works */}
         <section className="px-4 sm:px-6 lg:px-8 py-4 sm:py-8 md:py-8 lg:py-10 text-center">
-          <div className="  text-center">
+          <div className="text-center">
             <h2 className="text-3xl sm:text-4xl font-bold mb-12 text-transparent bg-clip-text bg-gradient-to-r from-[#0c4b6e] to-[#6B7280]">
-              How SaaS Techify Works
+              How Neosys After-Sales Platform Works
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {[
-                { step: 1, title: "Sign Up & Configure", description: "Customize your setup by choosing only the modules you need." },
-                { step: 2, title: "Integrate & Migrate", description: "Seamlessly integrate with existing tools and import your data effortlessly." },
-                { step: 3, title: "Centralized Dashboard", description: "Manage operations with our intuitive all-in-one dashboard." },
-                { step: 4, title: "Automate Workflows", description: "Set up smart automations to reduce manual work and increase efficiency." },
-                { step: 5, title: "Track & Analyze", description: "Gain valuable insights through real-time analytics and reporting tools." },
-                { step: 6, title: "Scale with Confidence", description: "Easily scale your operations as your business grows without friction." },
+                { step: 1, title: "Register Products", description: "Register customer products and their warranty details quickly." },
+                { step: 2, title: "Raise Service Requests", description: "Customers or agents can submit complaints or requests online." },
+                { step: 3, title: "Assign Technicians", description: "Easily assign service jobs to the nearest service centers or personnel." },
+                { step: 4, title: "Track Progress", description: "View real-time status of each service request and resolution steps." },
+                { step: 5, title: "Collect Feedback", description: "Gather customer reviews post-service to maintain quality." },
+                { step: 6, title: "Analyze & Improve", description: "Use insights to reduce turnaround time and boost satisfaction." },
               ].map((item, index) => (
                 <GradientCard key={index}>
                   <div className="flex items-center justify-center mb-4">
@@ -106,9 +122,7 @@ export default function Page() {
                       {item.step}
                     </div>
                   </div>
-                  <h3 className="text-xl font-semibold text-[#0c4b6e] mb-2">
-                    {item.title}
-                  </h3>
+                  <h3 className="text-xl font-semibold text-[#0c4b6e] mb-2">{item.title}</h3>
                   <p className="text-gray-600">{item.description}</p>
                 </GradientCard>
               ))}
@@ -116,57 +130,58 @@ export default function Page() {
           </div>
         </section>
 
-        {/* AI-Generated Visuals */}
+        {/* AI Visualization Section */}
         <section className="px-4 sm:px-6 lg:px-8 py-4 sm:py-8 md:py-8 lg:py-10 text-center">
           <div className="max-w-6xl mx-auto text-center">
             <h2 className="text-3xl sm:text-4xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">
-              Visualize Success with AI-Generated Insights
+              Visual Insights for Smarter Decisions
             </h2>
             <p className="mb-8 text-secondary text-lg">
-              Our platform uses AI to generate meaningful charts, forecasts, and business snapshots.
+              Dashboards powered by AI deliver actionable insights across service performance and trends.
             </p>
             <Image
               src="/aiimage.png"
               alt="AI Dashboard Preview"
               width={800}
               height={400}
-              className="w-full h-[200px] object-cover rounded-xl shadow-lg"
+              className="w-full   object-cover rounded-xl shadow-lg"
             />
-
           </div>
         </section>
 
         {/* Testimonials */}
         <section className="px-4 sm:px-6 lg:px-8 py-4 sm:py-8 md:py-8 lg:py-10 text-center">
-          <div className=" ">
+          <div>
             <h2 className="text-3xl sm:text-4xl font-bold mb-8 text-center text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">
-              What Our Clients Say
+              Trusted by Service Providers Everywhere
             </h2>
             <div className="grid md:grid-cols-3 gap-8">
               {[
-                { name: "Samantha Jones", feedback: "SaaS Techify transformed our business operations. Their CRM is a game changer!" },
-                { name: "Michael Lee", feedback: "We saved hours each week thanks to their ERP system. Highly recommend." },
-                { name: "Ayesha Patel", feedback: "Real-time billing and insights helped us scale fast and stay organized." },
+                { name: "Arun M.", feedback: "Managing after-sales service has never been easier. Neosys truly delivers." },
+                { name: "Priya K.", feedback: "Real-time updates and technician tracking helped us improve customer experience significantly." },
+                { name: "Ravi T.", feedback: "A one-stop solution for all warranty and complaint handling needs." },
               ].map((t, i) => (
                 <GradientCard key={i}>
                   <p className="text-gray-700 mb-4">"{t.feedback}"</p>
-                  {/* <p className="font-bold text-[#0c4b6e]">- {t.name}</p> */}
                 </GradientCard>
               ))}
             </div>
           </div>
         </section>
 
-        {/* Final CTA */}
+        {/* Final Call to Action */}
         <section className="px-4 sm:px-6 lg:px-8 py-4 sm:py-8 md:py-8 lg:py-10 text-center">
           <GradientCard>
             <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">
-              Ready to Transform Your Business?
+              Ready to Elevate Your After-Sales Services?
             </h2>
             <p className="mb-8 text-secondary text-lg">
-              Start your free trial or book a demo to see SaaS Techify in action.
+              Contact Neosys Infosystems to explore how we can enhance your service operations.
             </p>
-            <button onClick={() => router.push("/contact")}  className="bg-white   hover:bg-primary hover:text-white font-bold py-3 px-6 rounded-xl shadow-xl transition duration-300 transform hover:scale-105">
+            <button
+              onClick={() => router.push("/contact")}
+              className="bg-white hover:bg-primary hover:text-white font-bold py-3 px-6 rounded-xl shadow-xl transition duration-300 transform hover:scale-105"
+            >
               Get Started
             </button>
           </GradientCard>
