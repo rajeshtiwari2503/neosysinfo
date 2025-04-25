@@ -1,10 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-/* Root variables  #0F172A;  1e3a8a  0c4b6e*/
+ 
 :root {
-  --primary-color: #0c4b6e;
+  --primary-color: #c0695e;
   --secondary-color: #6B7280;
 }
 
@@ -37,7 +36,7 @@ a:hover {
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --primary-color: #0c4b6e;
+    --primary-color: #c0695e;
   --secondary-color: #6B7280;
   }
 }

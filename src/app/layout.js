@@ -3,39 +3,37 @@
 import './globals.css';
 
 export const metadata = {
-  title: 'SaaS Techify | CRM ERP Billing Software for Modern Businesses',
+  title: 'Neosys Infosystems | After-Sales Service Solutions for Customer Satisfaction',
   description:
-    "SaaS Techify provides advanced CRM, ERP, and billing solutions designed to optimize business processes, enhance customer engagement, and drive growth through smart automation and real-time analytics.",
+    'Enhance customer loyalty with efficient after-sales service solutions. Neosys Infosystems offers end-to-end support from installations, warranty management, repairs, to technical assistance — ensuring seamless post-purchase experiences.',
   keywords: [
-    'SaaS Techify',
-    'CRM software',
-    'ERP software',
-    'Billing software',
-    'business automation',
-    'customer relationship management',
-    'enterprise resource planning',
-    'invoice software',
-    'SaaS CRM ERP',
-    'cloud-based CRM',
+    'Neosys Infosystems',
+    'after-sales service',
+    'customer support',
+    'warranty service',
+    'repair and maintenance',
+    'technical support',
+    'CRM after-sales',
+    'post-purchase service',
+    'customer satisfaction',
+    'installation support',
   ],
-  authors: [{ name: 'SaaS Techify', url: 'https://saastechify.com' }],
-  creator: 'SaaS Techify',
+  authors: [{ name: 'Neosys Infosystems', url: 'https://neosysinfosystems.com' }],
+  creator: 'Neosys Infosystems',
   // openGraph: {
-  //   title: 'SaaS Techify | CRM ERP Billing Software for Modern Businesses',
+  //   title: 'Neosys Infosystems | After-Sales Service Solutions for Customer Satisfaction',
   //   description:
-  //     'Run your business smarter with SaaS Techify — an integrated platform for CRM, ERP, billing, and team collaboration.',
-  //   url: 'https://saastechify.com',
-  //   siteName: 'SaaS Techify',
-  
+  //     'Comprehensive after-sales support — including installation, warranty, repairs, and customer engagement tools — to keep your clients confident and connected.',
+  //   url: 'https://neosysinfosystems.com',
+  //   siteName: 'Neosys Infosystems',
   //   type: 'website',
   // },
   // twitter: {
   //   card: 'summary_large_image',
-  //   title: 'SaaS Techify | Business Management Software',
+  //   title: 'Neosys Infosystems | After-Sales Support Made Easy',
   //   description:
-  //     'All-in-one platform for CRM, ERP, and Billing. Manage your business with ease using SaaS Techify.',
-  //   creator: '@saastechify',  
-    
+  //     'Deliver seamless after-sales services and build long-term customer relationships with Neosys Infosystems.',
+  //   creator: '@neosysinfosystems', // update this if you have a Twitter handle
   // },
 };
 
