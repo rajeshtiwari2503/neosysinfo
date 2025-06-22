@@ -1,0 +1,72 @@
+// pages/why-choose-us.js
+export default function WhyChooseUs() {
+  const reasons = [
+    {
+      icon: '🧩',
+      title: 'Multi-Brand, Multi-Category Expertise',
+      description:
+        'From IT hardware and home appliances to electronics, we have the skills and infrastructure to support multiple categories under one roof.',
+    },
+    {
+      icon: '🌐',
+      title: 'Pan-India Reach',
+      description:
+        'We operate with a strong field network across metro cities and Tier 2/3 regions — ensuring true nationwide coverage for brands aiming to scale fast.',
+    },
+    {
+      icon: '⚙️',
+      title: 'Fast & Reliable Service',
+      description:
+        'Our processes are optimized for quick turn-around-time (TAT), with real-time service tracking, escalation control, and first-time resolution targets.',
+    },
+    {
+      icon: '👨‍🔧',
+      title: 'Skilled & Certified Technicians',
+      description:
+        'Our engineers undergo brand-specific training and are equipped with the tools and knowledge to meet exact service standards.',
+    },
+    {
+      icon: '📊',
+      title: 'Transparent Reporting & Performance Metrics',
+      description:
+        'We believe in full visibility. From SLA tracking to CSAT scores, we provide detailed service reports to ensure you always stay in control.',
+    },
+    {
+      icon: '🔄',
+      title: 'End-to-End Support',
+      description:
+        'Installation, demo, repair, reverse logistics, CRM integration, and customer support — all managed seamlessly by one trusted partner.',
+    },
+    {
+      icon: '💼',
+      title: 'Proven Track Record',
+      description:
+        'We’ve successfully managed service for top brands like HP, Lenovo, BenQ, and more — and we’re ready to scale with your business next.',
+    },
+  ];
+
+  return (
+    <div className=" mx-5 bg-gray-50 px-6 py-20">
+      <div className="max-w-6xl mx-auto text-center">
+        <h1 className="text-4xl font-bold text-gray-800 mb-4">✅ Why Choose Us</h1>
+        <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          At Neosys Infosystems, we don’t just deliver service — we deliver peace of mind.
+          Here’s why leading brands across India trust us as their after-sales service partner:
+        </p>
+      </div>
+
+      <div className="mt-16 grid sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+        {reasons.map((reason, index) => (
+          <div
+            key={index}
+            className="bg-white p-6 rounded-xl shadow hover:shadow-md transition text-left"
+          >
+            <div className="text-4xl mb-4">{reason.icon}</div>
+            <h3 className="text-xl font-semibold text-indigo-600 mb-2">{reason.title}</h3>
+            <p className="text-gray-700 text-sm">{reason.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}

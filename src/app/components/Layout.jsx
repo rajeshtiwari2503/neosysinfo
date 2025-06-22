@@ -1,6 +1,6 @@
 
 
- "use client";
+"use client";
 
 import React, { useRef, useState } from "react";
 import Image from "next/image";
@@ -11,6 +11,8 @@ import Dialog from "@mui/material/Dialog";
 import DialogActions from "@mui/material/DialogActions";
 import DialogContent from "@mui/material/DialogContent";
 import RequestServicePage from "./ServiceRequestPage";
+import { FaYoutube, FaInstagram, FaFacebook, FaTwitter, FaLinkedin, FaGoogle } from "react-icons/fa";
+import { FaPhoneAlt } from "react-icons/fa";
 
 export default function Layout({ children }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -38,10 +40,10 @@ export default function Layout({ children }) {
       "Consultancy Services",
       "Other Services",
     ],
-   
+
     About: [""],
     Carrier: [""],
-   
+
     Contact: [""],
   };
 
@@ -70,28 +72,28 @@ export default function Layout({ children }) {
             <Image
               src="/Logo.png"
               alt="Logo"
-              width={80}
-              height={80}
-              className="w-16 object-contain rounded-lg"
+              width={60}
+              height={60}
+              className="w-14 object-contain rounded-lg"
             />
           </Link>
           <nav className="md:hidden flex space-x-8 relative">
             <div
               className="relative"
-              
-            >
-            <div
-              className="relative"
-              
+
             >
               <div
-                // href="#"
-                onClick={handleOpenDialog} // Open the dialog when clicked
-                className="block cursor-pointer text-white hover:text-[#0082ff] transition-colors duration-200 rounded-md font-medium"
+                className="relative"
+
               >
-                Request for Service
+                <div
+                  // href="#"
+                  onClick={handleOpenDialog} // Open the dialog when clicked
+                  className="block cursor-pointer text-white hover:text-[#0082ff] transition-colors duration-200 rounded-md font-medium"
+                >
+                  Request for Service
+                </div>
               </div>
-            </div>
             </div>
           </nav>
           {/* Mobile toggle */}
@@ -150,7 +152,7 @@ export default function Layout({ children }) {
             })}
             <div
               className="relative"
-              
+
             >
               <div
                 // href="#"
@@ -202,18 +204,18 @@ export default function Layout({ children }) {
 
       {/* Service Request Dialog */}
       <div className=" ">
-      <Dialog open={openDialog} onClose={handleCloseDialog}>
-        
-        <DialogContent>
-           <RequestServicePage  />
-        </DialogContent>
-        <DialogActions>
-          
-        </DialogActions>
-      </Dialog>
+        <Dialog open={openDialog} onClose={handleCloseDialog}>
+
+          <DialogContent>
+            <RequestServicePage />
+          </DialogContent>
+          <DialogActions>
+
+          </DialogActions>
+        </Dialog>
       </div>
       {/* Footer */}
-      <footer className="bg-primary text-gray-300 py-2 mt-auto">
+      {/* <footer className="bg-primary text-gray-300 py-2 mt-auto">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-row justify-between items-center text-center md:text-left">
           <div className="flex items-center gap-2">
             <Image
@@ -223,6 +225,90 @@ export default function Layout({ children }) {
               height={80}
               className="w-16 object-contain rounded-lg shadow-md"
             />
+          </div>
+          <div>
+            <p className="text-sm">
+              &copy; {new Date().getFullYear()} Saas Techify — All rights reserved.
+            </p>
+            <p className="text-xs mt-1">Empowering digital transformation.</p>
+          </div>
+        </div>
+      </footer> */}
+     <footer className="bg-gradient-to-r from-[#c0695e] to-white text-black py-10 px-6 md:px-20">
+        <div className="max-w-screen-xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10">
+          {/* Contact Info */}
+          <div>
+            <div className="flex items-center gap-2">
+              <Image
+                src="/Logo.png"
+                alt="Saas Techify Logo"
+                width={80}
+                height={80}
+                className="w-16 object-contain rounded-lg shadow-md"
+              />
+            </div>
+            <div className="border border-white p-4 rounded-md mt-10 text-white">
+              <p className="mb-2 font-semibold">National Hotline</p>
+              <div className="flex items-center gap-2">
+                <FaPhoneAlt className="text-white text-lg" />
+                <span>+91 95086 63653</span>
+              </div>
+            </div>
+
+          </div>
+
+          {/* Office Addresses */}
+          <div>
+            <h2 className="text-xl font-semibold mb-4">Offices</h2>
+            <p className="mb-2"><strong>Corporate Office:</strong><br />Block B Sector 62 ,<br />Noida-201301</p>
+ 
+            <p className="mb-2 font-semibold">Quick Response</p>
+            <p className="mb-2">Service Team: <a href="Hello@neosysinfosystems.com" className="text-blue-600">Hello@neosysinfosystems.com</a></p>
+            <p className="mb-2">Sales Team: <a href="Hello@neosysinfosystems.com" className="text-blue-600">Hello@neosysinfosystems.com</a></p>
+            <p className="mb-2">HR Team: <a href="Hello@neosysinfosystems.com" className="text-blue-600">Hello@neosysinfosystems.com</a></p>
+            <p className="mb-2">Marketing: <a href="Hello@neosysinfosystems.com" className="text-blue-600">Hello@neosysinfosystems.com</a></p>
+          </div>
+
+          {/* Corporate Links */}
+          <div>
+            <h2 className="text-xl font-semibold mb-4">Corporate</h2>
+            <ul className="space-y-2">
+              <li>About Us</li>
+              <li>Our Core Values</li>
+              <li>HR Section</li>
+              <li>Product Portfolio</li>
+              <li>Product KIMs</li>
+              <li>Become Partner</li>
+              <li>Media Zone</li>
+              <li>CSR Initiatives</li>
+            </ul>
+          </div>
+
+          {/* Service Links */}
+          <div>
+            <h2 className="text-xl font-semibold mb-4">Service</h2>
+            <ul className="space-y-2">
+              <li>Service Center List</li>
+              <li>Warranty Policy</li>
+              <li>Warranty Check</li>
+              <li>Complain Status</li>
+              <li>Ecom Ext Warranty</li>
+              <li>E-Waste Management</li>
+              <li>Service Feedback</li>
+              <li>Review on Google</li>
+            </ul>
+          </div>
+        </div>
+
+        {/* Footer Bottom */}
+        <div className="mt-10 border-t border-gray-700 pt-6 text-center text-sm">
+          <div className="flex justify-center space-x-6 mb-4 text-xl">
+            <FaYoutube className="hover:text-red-500 cursor-pointer" />
+            <FaInstagram className="hover:text-pink-600 cursor-pointer" />
+            <FaFacebook className="hover:text-blue-500 cursor-pointer" />
+            <FaTwitter className="hover:text-blue-600 cursor-pointer" />
+            <FaLinkedin className="hover:text-blue-600 cursor-pointer" />
+            <FaGoogle className="hover:text-green-500 cursor-pointer" />
           </div>
           <div>
             <p className="text-sm">
