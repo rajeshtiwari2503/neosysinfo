@@ -3,6 +3,12 @@ import Image from "next/image";
 import Layout from "./components/Layout";
 import GradientCard from "./components/GradientBg";
 import { useRouter } from "next/navigation";
+import BrandsTrustPage from "./components/BrandTrust";
+import OurReach from "./components/OurReach";
+import ServicesPage from "./components/OurServices";
+import ServiceNetwork from "./components/ServiceNetwork";
+import WhyChooseUs from "./components/WhyChose";
+import OurTeam from "./components/OurTeam";
 
 export default function Page() {
   const router = useRouter();
@@ -129,7 +135,12 @@ export default function Page() {
             </div>
           </div>
         </section>
-
+<BrandsTrustPage />
+<OurReach  />
+<ServicesPage />
+<ServiceNetwork  />
+<WhyChooseUs  />
+<OurTeam  />
         {/* AI Visualization Section */}
         <section className="px-4 sm:px-6 lg:px-8 py-4 sm:py-8 md:py-8 lg:py-10 text-center">
           <div className="max-w-6xl mx-auto text-center">
