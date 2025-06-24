@@ -18,7 +18,112 @@ export default function Page() {
       <div className="text-gray-800">
 
         {/* Hero Section */}
-        <section className="px-4 sm:px-6 lg:px-8 py-4 sm:py-8 md:py-8 lg:py-10 text-center">
+
+        <section className="relative w-full  overflow-hidden rounded-md mt-3 text-white">
+          {/* Video Background */}
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="absolute inset-0 w-full h-full object-cover z-0"
+          >
+            <source src="/videoMain.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+
+          {/* Dark Gradient Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/60 to-black/90 z-10"></div>
+
+          {/* Main Content Over Video */}
+          <div className="relative z-20 px-6 md:px-12 lg:px-24 py-8 flex items-center justify-center  ">
+            <div className="max-w-5xl mx-auto text-center space-y-5">
+              <h1 className="text-4xl md:text-4xl font-extrabold leading-tight">
+                Reliable After-Sales Support
+              </h1>
+              <p className="text-lg md:text-xl font-light max-w-3xl mx-auto">
+                Fast, professional service for appliances, electronics & IT—trusted by top brands.
+              </p>
+
+              <div>
+                {/* <p>
+                  At <strong>Neosys Infosystems</strong>, we specialize in delivering fast, reliable,
+                  and professional after-sales service for home appliances, electronics, and IT devices.
+                  Backed by years of industry experience and trusted by top OEM brands, we ensure timely
+                  repair, installation, AMC support, and spare parts management—so your products stay in perfect condition, always.
+                </p>
+                <p>
+                  Whether you're a customer, OEM, or dealer—we’ve got the right service solution tailored to your needs.
+                  Our pan-India service network and expert technicians ensure satisfaction at every doorstep.
+                </p> */}
+              </div>
+              <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-white mt-12 px-6 md:px-0">
+
+                {/* What We Offer */}
+                <div className="bg-white/10 backdrop-blur-md rounded-xl p-6 border border-white/20 shadow-md">
+                  <h2 className="text-2xl font-semibold text-indigo-300 mb-4">✅ What We Offer</h2>
+                  <ul className="list-disc pl-5 space-y-2 text-base leading-relaxed">
+                    <li>On-site Repair & Maintenance</li>
+                    <li>Installation Services</li>
+                    <li>Spare Parts Supply</li>
+                    <li>Annual Maintenance Contracts (AMC)</li>
+                    <li>Authorized Service Partner Solutions</li>
+                  </ul>
+                </div>
+
+                {/* Why Choose Us */}
+                <div className="bg-white/10 backdrop-blur-md rounded-xl p-6 border border-white/20 shadow-md">
+                  <h2 className="text-2xl font-semibold text-indigo-300 mb-4">📍 Why Choose Neosys Infosystems?</h2>
+                  <ul className="list-disc pl-5 space-y-2 text-base leading-relaxed">
+                    <li>24x7 Customer Support</li>
+                    <li>Fast Response Time</li>
+                    <li>Verified & Trained Technicians</li>
+                    <li>Transparent Pricing</li>
+                    <li>Pan-India Coverage</li>
+                    <li>Trusted by Leading Brands</li>
+                  </ul>
+                </div>
+
+                {/* CTA Block */}
+                <div className="bg-white/10 backdrop-blur-md rounded-xl p-6 border border-white/20 shadow-md text-center flex flex-col justify-center items-center">
+                  <h2 className="text-2xl font-bold text-indigo-300 mb-4">🖱️ Book a Service in Minutes</h2>
+                  <p className="mb-6 text-base leading-relaxed">Just call or book online—and our team will take care of the rest.</p>
+                  <div
+                    onClick={() => router.push("/contact")}
+                    className="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 px-6 rounded-lg transition"
+                  >
+                    Book Now
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </section>
+
+        <section className="bg-gradient-to-br from-white via-sky-50 to-indigo-50 py-10 px-6 ">
+          <div className="max-w-5xl mx-auto bg-white rounded-2xl shadow-lg p-10 md:p-16 text-center border border-gray-100">
+            <h2 className="text-3xl md:text-4xl font-bold text-indigo-700 mb-6">
+              About Neosys Infosystems
+            </h2>
+            <p className="text-lg md:text-xl text-gray-700 leading-relaxed">
+              At <span className="font-semibold text-gray-900">Neosys Infosystems</span>, we specialize in delivering
+              <span className="text-indigo-600 font-medium"> fast, reliable, and professional after-sales service</span> for
+              home appliances, electronics, and IT devices.
+              <br /><br />
+              Backed by years of industry experience and trusted by top OEM brands, we ensure
+              <span className="text-indigo-600 font-medium"> timely repair, seamless installation, AMC support</span>,
+              and <span className="text-indigo-600 font-medium">genuine spare parts management</span>—so your products stay in perfect condition, always.
+              <br /><br />
+              Whether you're a <strong>customer, OEM, or dealer</strong>—we’ve got the right service solution tailored to your needs.
+              Our <strong>pan-India service network</strong> and <strong>expert technicians</strong> ensure satisfaction at every doorstep.
+            </p>
+          </div>
+        </section>
+
+
+
+        {/* <section className="px-4 sm:px-6 lg:px-8 py-4 sm:py-8 md:py-8 lg:py-10 text-center">
           <GradientCard>
             <div className="max-w-6xl mx-auto text-center">
               <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 leading-tight text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">
@@ -35,7 +140,7 @@ export default function Page() {
               </button>
             </div>
           </GradientCard>
-        </section>
+        </section> */}
 
         {/* Features */}
         <section className="px-4 sm:px-6 lg:px-8 py-4 sm:py-8 md:py-8 lg:py-10 text-center">
@@ -81,8 +186,9 @@ export default function Page() {
             ))}
           </div>
         </section>
+        <ServicesPage />
         {/* Scale & Impact Section */}
-        <section className="px-4 sm:px-6 lg:px-8 py-4 sm:py-8 md:py-8 lg:py-10 text-center">
+        {/* <section className="px-4 sm:px-6 lg:px-8 py-4 sm:py-8 md:py-8 lg:py-10 text-center">
           <div className="max-w-6xl mx-auto text-center">
             <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">
               Nationwide Reach & Real Results
@@ -105,7 +211,7 @@ export default function Page() {
               </GradientCard>
             </div>
           </div>
-        </section>
+        </section> */}
 
         {/* How It Works */}
         <section className="px-4 sm:px-6 lg:px-8 py-4 sm:py-8 md:py-8 lg:py-10 text-center">
@@ -135,30 +241,14 @@ export default function Page() {
             </div>
           </div>
         </section>
-<BrandsTrustPage />
-<OurReach  />
-<ServicesPage />
-<ServiceNetwork  />
-<WhyChooseUs  />
-<OurTeam  />
-        {/* AI Visualization Section */}
-        <section className="px-4 sm:px-6 lg:px-8 py-4 sm:py-8 md:py-8 lg:py-10 text-center">
-          <div className="max-w-6xl mx-auto text-center">
-            <h2 className="text-3xl sm:text-4xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">
-              Visual Insights for Smarter Decisions
-            </h2>
-            <p className="mb-8 text-secondary text-lg">
-              Dashboards powered by AI deliver actionable insights across service performance and trends.
-            </p>
-            <Image
-              src="/aiimage.png"
-              alt="AI Dashboard Preview"
-              width={800}
-              height={400}
-              className="w-full   object-cover rounded-xl shadow-lg"
-            />
-          </div>
-        </section>
+        <BrandsTrustPage />
+        <ServiceNetwork />
+        {/* <OurReach /> */}
+
+
+        <WhyChooseUs />
+        <OurTeam />
+
 
         {/* Testimonials */}
         <section className="px-4 sm:px-6 lg:px-8 py-4 sm:py-8 md:py-8 lg:py-10 text-center">

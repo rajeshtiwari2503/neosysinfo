@@ -3,7 +3,7 @@
 @tailwind utilities;
  
 :root {
-  --primary-color: #c0695e;
+  --primary-color: #729ff9;
   --secondary-color: #6B7280;
 }
 
@@ -36,7 +36,7 @@ a:hover {
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --primary-color: #c0695e;
+    --primary-color: #729ff9;
   --secondary-color: #6B7280;
   }
 }

@@ -1,6 +1,7 @@
  // pages/service-network.js
 import Image from 'next/image';
 
+
 export default function ServiceNetwork() {
   const stats = [
     
@@ -26,8 +27,11 @@ export default function ServiceNetwork() {
     },
   ];
 
+
   return (
-    <div className="mx-5 rounded-xl bg-gradient-to-br from-blue-700 to-blue-500 text-white px-10 py-10">
+   
+
+    <div className="mx-5 rounded-xl bg-gradient-to-r from-blue-500 to-blue-100 text-white px-10 py-10">
       <div className="  grid grid-cols-1 lg:grid-cols-2 gap-6 items-center">
         {/* Left Side - Content */}
         <div>
@@ -35,7 +39,7 @@ export default function ServiceNetwork() {
             SERVICE, UNBOUNDED
           </h1>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-6 mb-8">
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-6 mb-8 ">
             {stats.map((stat, index) => (
               <div key={index} className="text-center">
                 <h2 className="text-3xl font-extrabold text-yellow-300">{stat.value}</h2>
@@ -64,5 +68,6 @@ export default function ServiceNetwork() {
         </div>
       </div>
     </div>
+         
   );
 }
