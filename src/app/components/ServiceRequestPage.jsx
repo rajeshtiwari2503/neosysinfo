@@ -20,7 +20,7 @@ export default function RequestServicePage() {
   return (
     <>
       <Head>
-        <title>Request Service | Saas Techify</title>
+        <title>Request Service  </title>
         <meta
           name="description"
           content="Request professional service support from Saas Techify. Submit your product issue, preferred service date, and contact information."

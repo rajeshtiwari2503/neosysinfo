@@ -13,7 +13,8 @@ import DialogContent from "@mui/material/DialogContent";
 import RequestServicePage from "./ServiceRequestPage";
 import { FaYoutube, FaInstagram, FaFacebook, FaTwitter, FaLinkedin, FaGoogle } from "react-icons/fa";
 import { FaPhoneAlt } from "react-icons/fa";
-
+ 
+ 
 export default function Layout({ children }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [openMenu, setOpenMenu] = useState(null);
@@ -234,90 +235,85 @@ export default function Layout({ children }) {
           </div>
         </div>
       </footer> */}
-     <footer className="bg-gradient-to-r from-[#c0695e] to-white text-black py-10 px-6 md:px-20">
-        <div className="max-w-screen-xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10">
-          {/* Contact Info */}
-          <div>
+     <footer className="bg-primary text-black py-10 px-6 md:px-20">
+      <div className="max-w-screen-xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10">
+        {/* Contact Info */}
+        <div>
+          <div className="flex items-center gap-2">
+            <Image
+              src="/Logo.png"
+              alt="Neosys Logo"
+              width={80}
+              height={80}
+              className="w-16 object-contain rounded-lg shadow-md"
+            />
+          </div>
+          <div className="border border-white p-4 rounded-md mt-10 text-white  ">
+            <p className="mb-2 font-semibold">National Hotline</p>
             <div className="flex items-center gap-2">
-              <Image
-                src="/Logo.png"
-                alt="Saas Techify Logo"
-                width={80}
-                height={80}
-                className="w-16 object-contain rounded-lg shadow-md"
-              />
+              <FaPhoneAlt className="text-white text-lg" />
+              <span>+91 95086 63653</span>
             </div>
-            <div className="border border-white p-4 rounded-md mt-10 text-white">
-              <p className="mb-2 font-semibold">National Hotline</p>
-              <div className="flex items-center gap-2">
-                <FaPhoneAlt className="text-white text-lg" />
-                <span>+91 95086 63653</span>
-              </div>
-            </div>
-
           </div>
+        </div>
 
-          {/* Office Addresses */}
-          <div>
-            <h2 className="text-xl font-semibold mb-4">Offices</h2>
-            <p className="mb-2"><strong>Corporate Office:</strong><br />Block B Sector 62 ,<br />Noida-201301</p>
+        {/* Office Addresses */}
+        <div>
+          <h2 className="text-xl font-semibold mb-4">Offices</h2>
+          <p className="mb-2">
+            <strong>Corporate Office:</strong><br />
+            Block B Sector 62,<br />Noida-201301
+          </p>
+
+          <p className="mb-2 font-semibold">Quick Response</p>
+          <p className="mb-2">Service Team: <a href="mailto:Hello@neosysinfosystems.com" className="text-blue-600">Hello@neosysinfosystems.com</a></p>
  
-            <p className="mb-2 font-semibold">Quick Response</p>
-            <p className="mb-2">Service Team: <a href="Hello@neosysinfosystems.com" className="text-blue-600">Hello@neosysinfosystems.com</a></p>
-            <p className="mb-2">Sales Team: <a href="Hello@neosysinfosystems.com" className="text-blue-600">Hello@neosysinfosystems.com</a></p>
-            <p className="mb-2">HR Team: <a href="Hello@neosysinfosystems.com" className="text-blue-600">Hello@neosysinfosystems.com</a></p>
-            <p className="mb-2">Marketing: <a href="Hello@neosysinfosystems.com" className="text-blue-600">Hello@neosysinfosystems.com</a></p>
-          </div>
-
-          {/* Corporate Links */}
-          <div>
-            <h2 className="text-xl font-semibold mb-4">Corporate</h2>
-            <ul className="space-y-2">
-              <li>About Us</li>
-              <li>Our Core Values</li>
-              <li>HR Section</li>
-              <li>Product Portfolio</li>
-              <li>Product KIMs</li>
-              <li>Become Partner</li>
-              <li>Media Zone</li>
-              <li>CSR Initiatives</li>
-            </ul>
-          </div>
-
-          {/* Service Links */}
-          <div>
-            <h2 className="text-xl font-semibold mb-4">Service</h2>
-            <ul className="space-y-2">
-              <li>Service Center List</li>
-              <li>Warranty Policy</li>
-              <li>Warranty Check</li>
-              <li>Complain Status</li>
-              <li>Ecom Ext Warranty</li>
-              <li>E-Waste Management</li>
-              <li>Service Feedback</li>
-              <li>Review on Google</li>
-            </ul>
-          </div>
         </div>
 
-        {/* Footer Bottom */}
-        <div className="mt-10 border-t border-gray-700 pt-6 text-center text-sm">
-          <div className="flex justify-center space-x-6 mb-4 text-xl">
-            <FaYoutube className="hover:text-red-500 cursor-pointer" />
-            <FaInstagram className="hover:text-pink-600 cursor-pointer" />
-            <FaFacebook className="hover:text-blue-500 cursor-pointer" />
-            <FaTwitter className="hover:text-blue-600 cursor-pointer" />
-            <FaLinkedin className="hover:text-blue-600 cursor-pointer" />
-            <FaGoogle className="hover:text-green-500 cursor-pointer" />
-          </div>
-          <div>
-            <p className="text-sm">
-              &copy; {new Date().getFullYear()} Saas Techify — All rights reserved.
-            </p>
-            <p className="text-xs mt-1">Empowering digital transformation.</p>
-          </div>
+        {/* New Services Column */}
+        <div>
+          <h2 className="text-xl font-semibold mb-4">Our Services</h2>
+          <ul className="space-y-2">
+            <li><Link href="#">IT Services</Link></li>
+            <li><Link href="#">Field Service</Link></li>
+            <li><Link href="#">Home Appliances</Link></li>
+            <li><Link href="#">Consultancy Services</Link></li>
+            <li><Link href="#">Other Services</Link></li>
+          </ul>
         </div>
-      </footer>
+
+        {/* Company Pages */}
+        <div>
+          <h2 className="text-xl font-semibold mb-4">Quick Links</h2>
+          <ul className="space-y-2">
+            <li><Link href="/about">About</Link></li>
+            <li><Link href="/career">Career</Link></li>
+            <li><Link href="/contact">Contact</Link></li>
+           
+            <li><Link href="/terms">Terms of Service</Link></li>
+            <li><Link href="/privacy-policy">Privacy Policy</Link></li>
+          </ul>
+        </div>
+      </div>
+
+      {/* Footer Bottom */}
+      <div className="mt-10 border-t border-gray-700 pt-6 text-center text-sm">
+        <div className="flex justify-center space-x-6 mb-4 text-xl">
+          <FaYoutube className="hover:text-red-500 cursor-pointer" />
+          <FaInstagram className="hover:text-pink-600 cursor-pointer" />
+          <FaFacebook className="hover:text-blue-500 cursor-pointer" />
+          <FaTwitter className="hover:text-blue-600 cursor-pointer" />
+          <FaLinkedin className="hover:text-blue-600 cursor-pointer" />
+          <FaGoogle className="hover:text-green-500 cursor-pointer" />
+        </div>
+        <div>
+          <p className="text-sm">
+            &copy; {new Date().getFullYear()} Neosys Infosystems — All rights reserved.
+          </p>
+          <p className="text-xs mt-1">Empowering digital transformation.</p>
+        </div>
+      </div>
+    </footer>
     </div>
   );
 }

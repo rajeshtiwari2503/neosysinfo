@@ -75,14 +75,26 @@ export default function BrandsTrustPage() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-10">
-          {brandSupportSteps.map((step, index) => (
-            <div key={index} className="bg-white p-6 rounded-xl shadow hover:shadow-md transition">
-              <h3 className="text-lg font-semibold text-indigo-600 mb-2">{step.title}</h3>
-              <p className="text-gray-700 text-sm">{step.description}</p>
-            </div>
-          ))}
+        <div className="grid md:grid-cols-3 gap-10">
+          {brandSupportSteps.map((step, index) => {
+            const gradients = [
+              "bg-gradient-to-r from-blue-100 to-blue-500",
+              "bg-gradient-to-r from-cyan-100 to-blue-300",
+              "bg-gradient-to-r from-sky-100 to-cyan-200",
+            ];
+            return (
+              <div
+                key={index}
+                className={`p-6 rounded-xl shadow hover:shadow-md transition ${gradients[index % gradients.length]}`}
+              >
+                <h3 className="text-lg font-semibold text-indigo-700 mb-2">{step.title}</h3>
+                <p className="text-gray-800 text-sm">{step.description}</p>
+              </div>
+            );
+          })}
         </div>
+
+
       </div>
     </div>
   );
