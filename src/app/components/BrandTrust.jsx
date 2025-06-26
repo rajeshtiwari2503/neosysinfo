@@ -1,12 +1,14 @@
 import Image from 'next/image';
 
 const brands = [
-  { name: 'Samsung', logo: '/brands/samsung.png' },
-  { name: 'LG', logo: '/brands/lg.png' },
-  { name: 'Sony', logo: '/brands/sony.png' },
-  { name: 'Whirlpool', logo: '/brands/whirlpool.png' },
-  { name: 'Panasonic', logo: '/brands/panasonic.png' },
-  { name: 'Bosch', logo: '/brands/bosch.png' },
+  { name: 'Brize', logo: '/brize.jpeg' },
+  { name: 'Cadlec', logo: '/cadlec.jpeg' },
+  { name: 'Candes', logo: '/candes.jpeg' },
+  { name: 'Glabal Assurance', logo: '/glabalAssurance.jpeg' },
+  { name: 'Novamax', logo: '/novamax.jpeg' },
+  { name: 'RDP', logo: '/rdp.jpeg' },
+  { name: 'Supercool', logo: '/supercool.jpeg' },
+ 
 ];
 
 const brandSupportSteps = [
