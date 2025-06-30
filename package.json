@@ -40,6 +40,7 @@
     "react-select": "^5.8.0",
     "react-type-animation": "^3.2.0",
     "resend": "^2.0.0",
+    "swiper": "^11.2.10",
     "xlsx": "^0.18.5"
   },
   "devDependencies": {

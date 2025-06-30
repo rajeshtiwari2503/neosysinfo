@@ -1,14 +1,20 @@
+'use client';
+
 import Image from 'next/image';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination, Autoplay } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 
 const brands = [
   { name: 'Brize', logo: '/brize.jpeg' },
   { name: 'Cadlec', logo: '/cadlec.jpeg' },
   { name: 'Candes', logo: '/candes.jpeg' },
-  { name: 'Glabal Assurance', logo: '/glabalAssurance.jpeg' },
+  { name: 'Glabal Assurance', logo: '/globalAssurance.jpeg' },
   { name: 'Novamax', logo: '/novamax.jpeg' },
   { name: 'RDP', logo: '/rdp.jpeg' },
   { name: 'Supercool', logo: '/supercool.jpeg' },
- 
 ];
 
 const brandSupportSteps = [
@@ -55,21 +61,54 @@ export default function BrandsTrustPage() {
           </p>
         </div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-8 items-center justify-center mb-20">
-          {brands.map((brand) => (
-            <div key={brand.name} className="bg-white p-4 rounded-xl shadow hover:shadow-lg transition">
-              <Image
-                src={brand.logo}
-                alt={brand.name}
-                width={100}
-                height={60}
-                className="mx-auto object-contain"
-              />
-              <p className="mt-2 text-sm text-center text-gray-700 font-medium">{brand.name}</p>
-            </div>
-          ))}
-        </div>
+        {/* Swiper Slider for Brands with Pagination Dots */}
+        <Swiper
+          modules={[Pagination, Navigation, Autoplay]}
+          spaceBetween={30}
+          slidesPerView={2}
+          autoplay={{ delay: 2500, disableOnInteraction: false }}
+          pagination={{ clickable: true }}
+          breakpoints={{
+            640: { slidesPerView: 2 },
+            768: { slidesPerView: 3 },
+            1024: { slidesPerView: 4 },
+          }}
+          className="mb-16 pb-12" // Added padding bottom for pagination dots
+        >
 
+          {brands.map((brand) => (
+            <SwiperSlide key={brand.name}>
+              <div className="bg-white p-4 mb-7 rounded-xl shadow hover:shadow-lg transition h-24 flex items-center justify-center">
+                <Image
+                  src={brand.logo}
+                  alt={brand.name}
+                  width={100}
+                  height={60}
+                  className="object-contain h-20 w-full"
+                />
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+
+        {/* Custom Pagination Dot Styling */}
+        <style jsx global>{`
+          .swiper-pagination {
+            bottom: 0px !important;
+            text-align: center;
+          }
+          .swiper-pagination-bullet {
+            background-color: #3b82f6;
+            opacity: 0.4;
+            transition: all 0.3s;
+          }
+          .swiper-pagination-bullet-active {
+            opacity: 1;
+            transform: scale(1.2);
+          }
+        `}</style>
+
+        {/* Support Steps */}
         <div className="text-center mb-10">
           <h2 className="text-3xl font-semibold text-gray-800 mb-4">How We Support Our Brand Partners</h2>
           <p className="text-md text-gray-600 max-w-2xl mx-auto">
@@ -80,9 +119,9 @@ export default function BrandsTrustPage() {
         <div className="grid md:grid-cols-3 gap-10">
           {brandSupportSteps.map((step, index) => {
             const gradients = [
-              "bg-gradient-to-r from-blue-100 to-blue-500",
-              "bg-gradient-to-r from-cyan-100 to-blue-300",
-              "bg-gradient-to-r from-sky-100 to-cyan-200",
+              'bg-gradient-to-r from-blue-100 to-blue-500',
+              'bg-gradient-to-r from-cyan-100 to-blue-300',
+              'bg-gradient-to-r from-sky-100 to-cyan-200',
             ];
             return (
               <div
@@ -95,8 +134,6 @@ export default function BrandsTrustPage() {
             );
           })}
         </div>
-
-
       </div>
     </div>
   );

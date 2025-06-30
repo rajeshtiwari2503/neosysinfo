@@ -6,42 +6,49 @@ export default function WhyChooseUs() {
       title: 'Multi-Brand, Multi-Category Expertise',
       description:
         'From IT hardware and home appliances to electronics, we have the skills and infrastructure to support multiple categories under one roof.',
+      borderColor: "border-blue-400",
     },
     {
       icon: '🌐',
       title: 'Pan-India Reach',
       description:
         'We operate with a strong field network across metro cities and Tier 2/3 regions — ensuring true nationwide coverage for brands aiming to scale fast.',
+      borderColor: "border-yellow-400",
     },
     {
       icon: '⚙️',
       title: 'Fast & Reliable Service',
       description:
         'Our processes are optimized for quick turn-around-time (TAT), with real-time service tracking, escalation control, and first-time resolution targets.',
+      borderColor: "border-orange-400",
     },
     {
       icon: '👨‍🔧',
       title: 'Skilled & Certified Technicians',
       description:
         'Our engineers undergo brand-specific training and are equipped with the tools and knowledge to meet exact service standards.',
+      borderColor: "border-red-400",
     },
     {
       icon: '📊',
       title: 'Transparent Reporting & Performance Metrics',
       description:
         'We believe in full visibility. From SLA tracking to CSAT scores, we provide detailed service reports to ensure you always stay in control.',
+      borderColor: "border-pink-400",
     },
     {
       icon: '🔄',
       title: 'End-to-End Support',
       description:
         'Installation, demo, repair, reverse logistics, CRM integration, and customer support — all managed seamlessly by one trusted partner.',
+      borderColor: "border-blue-400",
     },
     {
       icon: '💼',
       title: 'Proven Track Record',
       description:
         'We’ve successfully managed service for top brands like HP, Lenovo, BenQ, and more — and we’re ready to scale with your business next.',
+      borderColor: "border-green-400",
     },
   ];
 
@@ -59,8 +66,7 @@ export default function WhyChooseUs() {
         {reasons.map((reason, index) => (
           <div
             key={index}
-            className="bg-white p-6 rounded-xl shadow hover:shadow-md transition text-left"
-          >
+            className={`border-t-4 ${reason.borderColor} rounded-xl bg-white p-6 shadow-md flex flex-col items-center text-center`}>
             <div className="text-4xl mb-4">{reason.icon}</div>
             <h3 className="text-xl font-semibold text-indigo-600 mb-2">{reason.title}</h3>
             <p className="text-gray-700 text-sm">{reason.description}</p>
