@@ -157,36 +157,46 @@ export default function Page() {
               {
                 title: "Warranty Tracking",
                 description: "Easily manage product warranties and validate customer claims with accurate records.",
+                 borderColor: "border-blue-400",
               },
               {
                 title: "Service Request Management",
                 description: "Centralized dashboard to handle service complaints and technician assignments.",
+                 borderColor: "border-green-400",
               },
               {
                 title: "Customer Support Hub",
                 description: "Efficient ticketing system for resolving customer issues faster and smarter.",
+                 borderColor: "border-blue-200",
               },
               {
                 title: "Feedback & Ratings",
                 description: "Collect customer reviews and satisfaction ratings to improve service quality.",
+                  borderColor: "border-purple-400",
               },
               {
                 title: "Real-Time Notifications",
                 description: "Keep customers and service centers updated with automated alerts and messages.",
+                borderColor: "border-yellow-400",
               },
               {
                 title: "Reports & Analytics",
                 description: "Monitor performance with detailed reports on service timelines, customer satisfaction, and more.",
+                  borderColor: "border-green-400",
               },
             ].map((f, i) => (
-              <GradientCard key={i}>
-                <h3 className="text-xl font-semibold mb-2 text-[#0c4b6e]">{f.title}</h3>
-                <p className="text-gray-600">{f.description}</p>
-              </GradientCard>
+              <div key={i}>
+                <div className={`border-t-4 ${f.borderColor} rounded-xl bg-white p-6 shadow-md flex flex-col items-center text-center`}>
+                  <h3 className="text-xl font-semibold mb-2 text-[#0c4b6e]">{f.title}</h3>
+                  <p className="text-gray-600">{f.description}</p>
+                </div>
+              </div>
             ))}
           </div>
         </section>
-        <ServicesPage />
+        {/* <ServicesPage /> */}
+
+
         {/* Scale & Impact Section */}
         {/* <section className="px-4 sm:px-6 lg:px-8 py-4 sm:py-8 md:py-8 lg:py-10 text-center">
           <div className="max-w-6xl mx-auto text-center">
@@ -258,13 +268,13 @@ export default function Page() {
             </h2>
             <div className="grid md:grid-cols-3 gap-8">
               {[
-                { name: "Arun M.", feedback: "Managing after-sales service has never been easier. Neosys truly delivers." },
-                { name: "Priya K.", feedback: "Real-time updates and technician tracking helped us improve customer experience significantly." },
-                { name: "Ravi T.", feedback: "A one-stop solution for all warranty and complaint handling needs." },
+                { name: "Arun M.", feedback: "Managing after-sales service has never been easier. Neosys truly delivers.",   borderColor: "border-red-400", },
+                { name: "Priya K.", feedback: "Real-time updates and technician tracking helped us improve customer experience significantly.",   borderColor: "border-blue-400", },
+                { name: "Ravi T.", feedback: "A one-stop solution for all warranty and complaint handling needs.",   borderColor: "border-green-400", },
               ].map((t, i) => (
-                <GradientCard key={i}>
+                <div key={i}   className={`border-t-4 ${t.borderColor} rounded-xl bg-white p-6 shadow-md flex flex-col items-center text-center`}>
                   <p className="text-gray-700 mb-4">"{t.feedback}"</p>
-                </GradientCard>
+                </div>
               ))}
             </div>
           </div>

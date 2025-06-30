@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
  
+
+@import 'swiper/css';
+@import 'swiper/css/pagination';
+@import 'swiper/css/navigation';
+
 :root {
   --primary-color: #729ff9;
   --secondary-color: #6B7280;
