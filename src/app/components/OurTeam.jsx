@@ -3,12 +3,12 @@ import Image from 'next/image';
 
 const team = [
   {
-    name: 'MANISH',
+    name: 'MANISH DUBEY',
     title: 'CEO',
     image: '/team/rohit-sinha.png',
   },
   {
-    name: 'RAJESH ',
+    name: 'RAJESH TIWARI',
     title: 'CTO',
     image: '/team/mukesh-doshi.png',
   },

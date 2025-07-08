@@ -3,9 +3,9 @@
 import './globals.css';
 
 export const metadata = {
-  title: 'Neosys Infosystems | After-Sales Service Solutions for Customer Satisfaction',
+  title: 'Neosys Infosystems – #1 After-Sales & IT Service Partner in India',
   description:
-    'Neosys Infosystems is a trusted pan-India after-sales service partner for top brands & providing end-to-end support for electronics, IT, and home appliances. We offer installation, repair, reverse logistics, and CRM-backed support with fast TAT and real-time service tracking.',
+    'Looking for reliable after-sales service in India? Neosys Infosystems is the top-rated provider for home appliances, IT products, and OEM brands. Serving 700+ cities with expert repair, installation, and support—fast, trusted, and nationwide.',
   keywords: [
     'Neosys Infosystems',
     'after-sales service',
