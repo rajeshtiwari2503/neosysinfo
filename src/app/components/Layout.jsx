@@ -13,8 +13,8 @@ import DialogContent from "@mui/material/DialogContent";
 import RequestServicePage from "./ServiceRequestPage";
 import { FaYoutube, FaInstagram, FaFacebook, FaTwitter, FaLinkedin, FaGoogle } from "react-icons/fa";
 import { FaPhoneAlt } from "react-icons/fa";
- 
- 
+
+
 export default function Layout({ children }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [openMenu, setOpenMenu] = useState(null);
@@ -67,14 +67,14 @@ export default function Layout({ children }) {
   return (
     <div className="min-h-screen flex flex-col">
       {/* Header */}
-      <header className="bg-primary text-white shadow-md sticky top-0 z-50">
+      {/* <header className="bg-[#FFFFF] text-[#000] text-[16px] shadow-md sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2 flex justify-between items-center">
           <Link href="/" className="flex items-center gap-2">
             <Image
               src="/Logo.png"
               alt="Logo"
-              width={60}
-              height={60}
+              width={80}
+              height={80}
               className="w-14 object-contain rounded-lg"
             />
           </Link>
@@ -90,14 +90,16 @@ export default function Layout({ children }) {
                 <div
                   // href="#"
                   onClick={handleOpenDialog} // Open the dialog when clicked
-                  className="block cursor-pointer text-white hover:text-[#0082ff] transition-colors duration-200 rounded-md font-medium"
+                className="block cursor-pointer bg-[#2080db] p-2 text-white hover:bg-white hover:text-[#2080db] transition-colors border duration-200 rounded-md font-bold"
+                  
+                  // className="block cursor-pointer text-[#000] hover:text-[#2080db] transition-colors duration-200 rounded-md font-bold"
                 >
                   Request for Service
                 </div>
               </div>
             </div>
           </nav>
-          {/* Mobile toggle */}
+           
           <div className="md:hidden" onClick={() => setIsMenuOpen(!isMenuOpen)}>
             {isMenuOpen ? (
               <CloseIcon sx={{ color: "white" }} />
@@ -106,7 +108,7 @@ export default function Layout({ children }) {
             )}
           </div>
 
-          {/* Desktop Nav */}
+         
           <nav className="hidden md:flex space-x-8 relative">
             {Object.entries(menuItems).map(([menu, items]) => {
               const isDirectLink = items.length === 1 && items[0] === "";
@@ -120,24 +122,29 @@ export default function Layout({ children }) {
                   {isDirectLink ? (
                     <Link
                       href={pathMap[menu] || "#"}
-                      className="block text-white hover:text-[#0082ff] transition-colors duration-200 rounded-md font-medium"
+                         className="block text-[#000] text-[16px] font-bold relative transition-all duration-500 hover:text-[#2080db]
+    after:content-[''] after:absolute after:bottom-[-8px] after:left-1/2 after:-translate-x-1/2 after:w-full after:scale-x-0 after:origin-center
+    after:h-[2px] after:bg-[#2080db] after:transition-transform after:duration-500 hover:after:scale-x-100"
+                      // className="block text-[#000] text-[16px] hover:text-[#2080db] transition-colors duration-200 rounded-md font-bold"
                     >
-                      {menu}
+                      {menu}1
                     </Link>
                   ) : (
                     <>
-                      <button className="hover:text-[#0082ff] transition-colors duration-200 font-medium">
+                      <button className="block text-[#000] text-[16px] font-bold relative transition-all duration-500 hover:text-[#2080db]
+    after:content-[''] after:absolute after:bottom-[-8px] after:left-1/2 after:-translate-x-1/2 after:w-full after:scale-x-0 after:origin-center
+    after:h-[2px] after:bg-[#2080db] after:transition-transform after:duration-500 hover:after:scale-x-100">
                         {menu}
                       </button>
 
                       {openMenu === menu && (
-                        <div className="absolute left-0 mt-2 w-72 bg-white text-black rounded-md shadow-lg z-20">
-                          <ul className="py-2 grid grid-cols-1 md:grid-cols-2 gap-2">
+                        <div className="absolute left-0 mt-2 w-52 bg-white text-black rounded-md shadow-lg z-20">
+                          <ul className="py-2 grid grid-cols-1  gap-2">
                             {items.map((item, index) => (
                               <li key={index}>
                                 <Link
                                   href="#"
-                                  className="block px-4 py-1 text-sm hover:bg-primary hover:rounded-md hover:text-white"
+                                  className="block px-4 py-1 text-[#000] text-[16px]  hover:bg-primary hover:rounded-md hover:text-white"
                                 >
                                   {item}
                                 </Link>
@@ -158,7 +165,7 @@ export default function Layout({ children }) {
               <div
                 // href="#"
                 onClick={handleOpenDialog} // Open the dialog when clicked
-                className="block cursor-pointer text-white hover:text-[#0082ff] transition-colors duration-200 rounded-md font-medium"
+                className="block cursor-pointer bg-[#2080db] p-2 text-white hover:bg-white hover:text-[#2080db] transition-colors border duration-200 rounded-md font-bold"
               >
                 Request for Service
               </div>
@@ -198,10 +205,127 @@ export default function Layout({ children }) {
             })}
           </div>
         )}
+      </header> */}
+      <header className="bg-[#FFFFFF] text-[#000] text-[16px] shadow-md sticky top-0 z-50">
+        <div className="  px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
+          {/* Left: Logo */}
+          <Link href="/" className="flex items-center gap-2">
+            <Image
+              src="/Logo.png"
+              alt="Neosys Logo"
+              width={80}
+              height={80}
+              className="w-16 object-contain rounded-lg shadow-md"
+            />
+          </Link>
+
+          {/* Center: Nav Menu */}
+          <nav className="hidden md:flex flex-1 justify-center space-x-8 relative">
+            {Object.entries(menuItems).map(([menu, items]) => {
+              const isDirectLink = items.length === 1 && items[0] === "";
+              return (
+                <div
+                  key={menu}
+                  className="relative"
+                  onMouseEnter={() => handleMouseEnter(menu)}
+                  onMouseLeave={handleMouseLeave}
+                >
+                  {isDirectLink ? (
+                    <Link
+                      href={pathMap[menu] || "#"}
+                      className="block text-[#000] text-[16px] font-bold relative transition-all duration-500 hover:text-[#2080db]
+                  after:content-[''] after:absolute after:bottom-[-8px] after:left-1/2 after:-translate-x-1/2 after:w-full after:scale-x-0 after:origin-center
+                  after:h-[2px] after:bg-[#2080db] after:transition-transform after:duration-500 hover:after:scale-x-100"
+                    >
+                      {menu}
+                    </Link>
+                  ) : (
+                    <>
+                      <button className="block text-[#000] text-[16px] font-bold relative transition-all duration-500 hover:text-[#2080db]
+                  after:content-[''] after:absolute after:bottom-[-8px] after:left-1/2 after:-translate-x-1/2 after:w-full after:scale-x-0 after:origin-center
+                  after:h-[2px] after:bg-[#2080db] after:transition-transform after:duration-500 hover:after:scale-x-100">
+                        {menu}
+                      </button>
+                      {openMenu === menu && (
+                        <div className="absolute left-0 mt-2 w-52 bg-white text-black rounded-md shadow-lg z-20">
+                          <ul className="py-2 grid grid-cols-1 gap-2">
+                            {items.map((item, index) => (
+                              <li key={index}>
+                                <Link
+                                  href="#"
+                                  className="block px-4 py-1 text-[#000] text-[16px] hover:bg-primary hover:rounded-md hover:text-white"
+                                >
+                                  {item}
+                                </Link>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      )}
+                    </>
+                  )}
+                </div>
+              );
+            })}
+          </nav>
+
+          {/* Right: Request Button */}
+          <div className="hidden md:block">
+            <div
+              onClick={handleOpenDialog}
+              className="cursor-pointer bg-[#2080db] p-2 px-4 text-white hover:bg-white hover:text-[#2080db] border transition-colors duration-300 rounded-md font-bold"
+            >
+              Request for Service
+            </div>
+          </div>
+
+          {/* Mobile Toggle Icon */}
+          <div className="md:hidden" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+            {isMenuOpen ? (
+              <CloseIcon sx={{ color: "black" }} />
+            ) : (
+              <MenuIcon sx={{ color: "black" }} />
+            )}
+          </div>
+        </div>
+
+        {/* Mobile Nav */}
+        {isMenuOpen && (
+          <div className="md:hidden bg-primary border-t text-white px-6 py-4 space-y-2">
+            {Object.entries(menuItems).map(([menu, items]) => {
+              const isDirectLink = items.length === 1 && items[0] === "";
+              return (
+                <div key={menu}>
+                  {isDirectLink ? (
+                    <Link
+                      href={pathMap[menu] || "#"}
+                      className="block font-semibold text-white hover:text-secondary text-base"
+                    >
+                      {menu}
+                    </Link>
+                  ) : (
+                    <>
+                      <p className="font-semibold text-white text-base mb-1">{menu}</p>
+                      <ul className="pl-2 text-sm grid grid-cols-2 gap-2">
+                        {items.map((item, index) => (
+                          <li key={index}>
+                            <Link href="#" className="block hover:text-secondary">
+                              {item}
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    </>
+                  )}
+                </div>
+              );
+            })}
+          </div>
+        )}
       </header>
 
       {/* Main */}
-      <main className="flex-1 bg-gray-50 py-6 px-4 sm:px-6 lg:px-8">{children}</main>
+      <main className="flex-1 bg-gray-50  ">{children}</main>
 
       {/* Service Request Dialog */}
       <div className=" ">
@@ -235,85 +359,85 @@ export default function Layout({ children }) {
           </div>
         </div>
       </footer> */}
-     <footer className="bg-primary text-black py-10 px-6 md:px-20">
-      <div className="max-w-screen-xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10">
-        {/* Contact Info */}
-        <div>
-          <div className="flex items-center gap-2">
-            <Image
-              src="/Logo.png"
-              alt="Neosys Logo"
-              width={80}
-              height={80}
-              className="w-16 object-contain rounded-lg shadow-md"
-            />
-          </div>
-          <div className="border border-white p-4 rounded-md mt-10 text-white  ">
-            <p className="mb-2 font-semibold">National Hotline</p>
+      <footer className="bg-[#fff] text-black py-10 px-6 md:px-20">
+        <div className="max-w-screen-xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10">
+          {/* Contact Info */}
+          <div>
             <div className="flex items-center gap-2">
-              <FaPhoneAlt className="text-white text-lg" />
-              <span>+91 95086 63653</span>
+              <Image
+                src="/Logo.png"
+                alt="Neosys Logo"
+                width={80}
+                height={80}
+                className="w-16 object-contain rounded-lg shadow-md"
+              />
+            </div>
+            <div className="border border-black p-4 rounded-md mt-10 text-black  ">
+              <p className="mb-2 font-semibold">National Hotline</p>
+              <div className="flex items-center gap-2">
+                <FaPhoneAlt className="text-black text-lg" />
+                <span>+91 95086 63653</span>
+              </div>
             </div>
           </div>
+
+          {/* Office Addresses */}
+          <div>
+            <h2 className="text-xl font-semibold mb-4">Offices</h2>
+            <p className="mb-2">
+              <strong>Corporate Office:</strong><br />
+              Block B Sector 62,<br />Noida-201301
+            </p>
+
+            <p className="mb-2 font-semibold">Quick Response</p>
+            <p className="mb-2">Service Team: <a href="mailto:hello@neosysinfosystems.com" className="text-blue-600">hello@neosysinfosystems.com</a></p>
+
+          </div>
+
+          {/* New Services Column */}
+          <div>
+            <h2 className="text-xl font-semibold mb-4">Our Services</h2>
+            <ul className="space-y-2">
+              <li><Link href="#">IT Services</Link></li>
+              <li><Link href="#">Field Service</Link></li>
+              <li><Link href="#">Home Appliances</Link></li>
+              <li><Link href="#">Consultancy Services</Link></li>
+              <li><Link href="#">Other Services</Link></li>
+            </ul>
+          </div>
+
+          {/* Company Pages */}
+          <div>
+            <h2 className="text-xl font-semibold mb-4">Quick Links</h2>
+            <ul className="space-y-2">
+              <li><Link href="/about">About</Link></li>
+              <li><Link href="/career">Career</Link></li>
+              <li><Link href="/contact">Contact</Link></li>
+
+              <li><Link href="/terms">Terms of Service</Link></li>
+              <li><Link href="/privacy-policy">Privacy Policy</Link></li>
+            </ul>
+          </div>
         </div>
 
-        {/* Office Addresses */}
-        <div>
-          <h2 className="text-xl font-semibold mb-4">Offices</h2>
-          <p className="mb-2">
-            <strong>Corporate Office:</strong><br />
-            Block B Sector 62,<br />Noida-201301
-          </p>
-
-          <p className="mb-2 font-semibold">Quick Response</p>
-          <p className="mb-2">Service Team: <a href="mailto:Hello@neosysinfosystems.com" className="text-blue-600">Hello@neosysinfosystems.com</a></p>
- 
+        {/* Footer Bottom */}
+        <div className="mt-10 border-t border-gray-700 pt-6 text-center text-sm">
+          <div className="flex justify-center space-x-6 mb-4 text-xl">
+            <FaYoutube className="hover:text-red-500 cursor-pointer" />
+            <FaInstagram className="hover:text-pink-600 cursor-pointer" />
+            <FaFacebook className="hover:text-blue-500 cursor-pointer" />
+            <FaTwitter className="hover:text-blue-600 cursor-pointer" />
+            <FaLinkedin className="hover:text-blue-600 cursor-pointer" />
+            <FaGoogle className="hover:text-green-500 cursor-pointer" />
+          </div>
+          <div>
+            <p className="text-sm">
+              &copy; {new Date().getFullYear()} Saas Techify — All rights reserved.
+            </p>
+            <p className="text-xs mt-1">Empowering digital transformation.</p>
+          </div>
         </div>
-
-        {/* New Services Column */}
-        <div>
-          <h2 className="text-xl font-semibold mb-4">Our Services</h2>
-          <ul className="space-y-2">
-            <li><Link href="#">IT Services</Link></li>
-            <li><Link href="#">Field Service</Link></li>
-            <li><Link href="#">Home Appliances</Link></li>
-            <li><Link href="#">Consultancy Services</Link></li>
-            <li><Link href="#">Other Services</Link></li>
-          </ul>
-        </div>
-
-        {/* Company Pages */}
-        <div>
-          <h2 className="text-xl font-semibold mb-4">Quick Links</h2>
-          <ul className="space-y-2">
-            <li><Link href="/about">About</Link></li>
-            <li><Link href="/career">Career</Link></li>
-            <li><Link href="/contact">Contact</Link></li>
-           
-            <li><Link href="/terms">Terms of Service</Link></li>
-            <li><Link href="/privacy-policy">Privacy Policy</Link></li>
-          </ul>
-        </div>
-      </div>
-
-      {/* Footer Bottom */}
-      <div className="mt-10 border-t border-gray-700 pt-6 text-center text-sm">
-        <div className="flex justify-center space-x-6 mb-4 text-xl">
-          <FaYoutube className="hover:text-red-500 cursor-pointer" />
-          <FaInstagram className="hover:text-pink-600 cursor-pointer" />
-          <FaFacebook className="hover:text-blue-500 cursor-pointer" />
-          <FaTwitter className="hover:text-blue-600 cursor-pointer" />
-          <FaLinkedin className="hover:text-blue-600 cursor-pointer" />
-          <FaGoogle className="hover:text-green-500 cursor-pointer" />
-        </div>
-        <div>
-          <p className="text-sm">
-            &copy; {new Date().getFullYear()} Saas Techify — All rights reserved.
-          </p>
-          <p className="text-xs mt-1">Empowering digital transformation.</p>
-        </div>
-      </div>
-    </footer>
+      </footer>
     </div>
   );
 }
