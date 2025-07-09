@@ -19,7 +19,7 @@ export default function Page() {
 
         {/* Hero Section */}
 
-        <section className="relative w-full  overflow-hidden rounded-md mt-3 text-white">
+        <section className="relative w-full  overflow-hidden    text-white">
           {/* Video Background */}
           <video
             autoPlay
@@ -36,7 +36,7 @@ export default function Page() {
           <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/60 to-black/90 z-10"></div>
 
           {/* Main Content Over Video */}
-          <div className="relative z-20 px-6 md:px-12 lg:px-24 py-8 flex items-center justify-center  ">
+          <div className="relative z-20 px-6 md:px-12 lg:px-24 py-8 mb-2 flex items-center justify-center  ">
             <div className="max-w-5xl mx-auto text-center space-y-5">
               <h1 className="text-4xl md:text-4xl font-extrabold leading-tight">
                 Reliable After-Sales Support
