@@ -143,7 +143,7 @@ export default function Page() {
         </section> */}
 
         {/* Features */}
-        <section className="px-4 sm:px-6 lg:px-8 py-4 sm:py-8 md:py-8 lg:py-10 text-center">
+        {/* <section className="px-4 sm:px-6 lg:px-8 py-4 sm:py-8 md:py-8 lg:py-10 text-center">
           <div className="max-w-6xl mx-auto text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">
               Key Features
@@ -193,7 +193,92 @@ export default function Page() {
               </div>
             ))}
           </div>
-        </section>
+        </section> */}
+
+      <section className="px-4 sm:px-6 lg:px-8 py-4 sm:py-8 md:py-8 lg:py-10 text-center bg-gray-50">
+  <div className="max-w-6xl mx-auto text-center mb-12">
+    <h2 className="text-3xl sm:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">
+      Key Features
+    </h2>
+    <p className="text-gray-600 mt-4 text-lg">
+      A complete ecosystem to handle product servicing, customer interactions, and feedback loops.
+    </p>
+  </div>
+
+  <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+    {[
+      {
+        title: "Warranty Tracking",
+        description: "Easily manage product warranties and validate customer claims with accurate records.",
+        borderColor: "border-blue-400",
+        icon: "/Logo.png",
+        bgColor: "bg-blue-100",
+        hoverBg: "group-hover:bg-blue-500",
+      },
+      {
+        title: "Service Request Management",
+        description: "Centralized dashboard to handle service complaints and technician assignments.",
+        borderColor: "border-green-400",
+        icon: "/Logo.png",
+        bgColor: "bg-green-100",
+        hoverBg: "group-hover:bg-green-500",
+      },
+      {
+        title: "Customer Support Hub",
+        description: "Efficient ticketing system for resolving customer issues faster and smarter.",
+        borderColor: "border-blue-200",
+        icon: "/Logo.png",
+        bgColor: "bg-blue-100",
+        hoverBg: "group-hover:bg-blue-400",
+      },
+      {
+        title: "Feedback & Ratings",
+        description: "Collect customer reviews and satisfaction ratings to improve service quality.",
+        borderColor: "border-purple-400",
+        icon: "/Logo.png",
+        bgColor: "bg-purple-100",
+        hoverBg: "group-hover:bg-purple-500",
+      },
+      {
+        title: "Real-Time Notifications",
+        description: "Keep customers and service centers updated with automated alerts and messages.",
+        borderColor: "border-yellow-400",
+        icon: "/Logo.png",
+        bgColor: "bg-yellow-100",
+        hoverBg: "group-hover:bg-yellow-400",
+      },
+      {
+        title: "Reports & Analytics",
+        description: "Monitor performance with detailed reports on service timelines, customer satisfaction, and more.",
+        borderColor: "border-green-400",
+        icon: "/Logo.png",
+        bgColor: "bg-green-100",
+        hoverBg: "group-hover:bg-green-500",
+      },
+    ].map((f, i) => (
+      <div key={i}>
+        <div
+          className={`group border-t-4 ${f.borderColor} rounded-xl bg-white p-6 shadow-md flex flex-col items-center text-center transition-transform transform duration-300 hover:scale-105`}
+        >
+          {/* Icon with grow and background fill on hover */}
+          <div
+            className={`w-16 h-16 rounded-full flex items-center justify-center mb-4 transition-all duration-300 transform group-hover:scale-110 ${f.bgColor} ${f.hoverBg}`}
+          >
+            <img src={f.icon} alt={f.title} className="w-8 h-8 transition-transform duration-300" />
+          </div>
+
+          <h3 className="text-xl font-semibold mb-2 text-[#0c4b6e] group-hover:text-primary">
+            {f.title}
+          </h3>
+
+          <p className="text-gray-600">{f.description}</p>
+        </div>
+      </div>
+    ))}
+  </div>
+</section>
+
+
         {/* <ServicesPage /> */}
 
 
@@ -281,7 +366,7 @@ export default function Page() {
         </section>
 
         {/* Final Call to Action */}
-        <section className="px-4 sm:px-6 lg:px-8 py-4 sm:py-8 md:py-8 lg:py-10 text-center">
+        <section className="px-4 sm:px-6 lg:px-8 py-4 sm:py-8 md:py-8 lg:py-10  text-center">
           <GradientCard>
             <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">
               Ready to Elevate Your After-Sales Services?
