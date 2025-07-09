@@ -359,7 +359,7 @@ export default function Layout({ children }) {
           </div>
         </div>
       </footer> */}
-      <footer className="bg-[#fff] text-black py-10 px-6 md:px-20">
+      <footer className="bg-[#fff] text-black py-10  ">
         <div className="max-w-screen-xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10">
           {/* Contact Info */}
           <div>
