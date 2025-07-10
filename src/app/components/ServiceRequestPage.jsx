@@ -35,7 +35,7 @@ export default function RequestServicePage() {
       <div className="   ">
         <h1 className="text-xl font-bold mt-2 mb-3 text-primary">Request for Service</h1>
 
-        {/* <form className="space-y-4"  action="https://formsubmit.co/hello@neosysinfosystems.com"
+        {/* <form className="space-y-4"  action="https://formsubmit.co/services@neosysinfosystems.com"
   method="POST"  >
           <TextField
             label="Full Name"
@@ -116,13 +116,13 @@ export default function RequestServicePage() {
          <form
       // id="fs-form"
       className="space-y-4"
-      action="https://formsubmit.co/hello@neosysinfosystems.com"
+      action="https://formsubmit.co/services@neosysinfosystems.com"
       method="POST"
       // onSubmit={handleSubmit(onValid)}
     >
       {/* Optional hidden fields for FormSubmit */}
-      <input type="hidden" name="_captcha" value="false" />
-      <input type="hidden" name="_next" value="https://yourdomain.com/thank-you" />
+      {/* <input type="hidden" name="_captcha" value="false" />
+      <input type="hidden" name="_next" value="https://yourdomain.com/thank-you" /> */}
 
       <TextField
         label="Full Name"

@@ -390,7 +390,7 @@ export default function Layout({ children }) {
             </p>
 
             <p className="mb-2 font-semibold">Quick Response</p>
-            <p className="mb-2">Service Team: <a href="mailto:hello@neosysinfosystems.com" className="text-blue-600">hello@neosysinfosystems.com</a></p>
+            <p className="mb-2">Service Team: <a href="mailto:services@neosysinfosystems.com" className="text-blue-600"> services@neosysinfosystems.com</a></p>
 
           </div>
 
