@@ -13,7 +13,7 @@ import DialogContent from "@mui/material/DialogContent";
 import RequestServicePage from "./ServiceRequestPage";
 import { FaYoutube, FaInstagram, FaFacebook, FaTwitter, FaLinkedin, FaGoogle } from "react-icons/fa";
 import { FaPhoneAlt } from "react-icons/fa";
-
+import { BsWhatsapp } from 'react-icons/bs'
 
 export default function Layout({ children }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -94,7 +94,7 @@ export default function Layout({ children }) {
                   
                   // className="block cursor-pointer text-[#000] hover:text-[#2080db] transition-colors duration-200 rounded-md font-bold"
                 >
-                  Request for Service
+                 GET QUOTE
                 </div>
               </div>
             </div>
@@ -167,7 +167,7 @@ export default function Layout({ children }) {
                 onClick={handleOpenDialog} // Open the dialog when clicked
                 className="block cursor-pointer bg-[#2080db] p-2 text-white hover:bg-white hover:text-[#2080db] transition-colors border duration-200 rounded-md font-bold"
               >
-                Request for Service
+               GET QUOTE
               </div>
             </div>
           </nav>
@@ -216,7 +216,7 @@ export default function Layout({ children }) {
               width={80}
               height={80}
               className="w-16 object-contain rounded-lg shadow-md"
-            />
+            /> <span className="ps-5 text-[#000] text-[16px] font-bold">Neosys Infosystems</span>
           </Link>
 
           {/* Center: Nav Menu */}
@@ -275,7 +275,7 @@ export default function Layout({ children }) {
               onClick={handleOpenDialog}
               className="cursor-pointer bg-[#2080db] p-2 px-4 text-white hover:bg-white hover:text-[#2080db] border transition-colors duration-300 rounded-md font-bold"
             >
-              Request for Service
+             GET QUOTE
             </div>
           </div>
 
@@ -327,6 +327,16 @@ export default function Layout({ children }) {
       {/* Main */}
       <main className="flex-1 bg-gray-50  ">{children}</main>
 
+
+   {/* WhatsApp Floating Button */}
+      <a
+        href="https://wa.me/95086 63653"
+        className="fixed bottom-4 left-4 bg-green-500 p-3 rounded-full shadow-lg z-50"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <BsWhatsapp className="text-white text-2xl" />
+      </a>
       {/* Service Request Dialog */}
       <div className=" ">
         <Dialog open={openDialog} onClose={handleCloseDialog}>
@@ -359,7 +369,7 @@ export default function Layout({ children }) {
           </div>
         </div>
       </footer> */}
-      <footer className="bg-[#fff] text-black py-10  ">
+      <footer className="bg-[#0f0600] text-white py-10  ">
         <div className="max-w-screen-xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10">
           {/* Contact Info */}
           <div>
@@ -371,11 +381,12 @@ export default function Layout({ children }) {
                 height={80}
                 className="w-16 object-contain rounded-lg shadow-md"
               />
+               
             </div>
-            <div className="border border-black p-4 rounded-md mt-10 text-black  ">
+            <div className="border border-white p-4 rounded-md mt-10 text-white  ">
               <p className="mb-2 font-semibold">National Hotline</p>
               <div className="flex items-center gap-2">
-                <FaPhoneAlt className="text-black text-lg" />
+                <FaPhoneAlt className="text-white text-lg" />
                 <span>+91 95086 63653</span>
               </div>
             </div>

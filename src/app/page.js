@@ -10,6 +10,8 @@ import ServiceNetwork from "./components/ServiceNetwork";
 import WhyChooseUs from "./components/WhyChose";
 import OurTeam from "./components/OurTeam";
 import { motion } from 'framer-motion'
+import ServiceHighlights from "./components/ServiceHighlight";
+import FAQPage from "./components/Faqs";
 
 export default function Page() {
   const router = useRouter();
@@ -137,7 +139,7 @@ export default function Page() {
             </motion.p>
           </motion.div>
         </section>
-
+<ServiceHighlights />
 
 
         {/* <section className="px-4 sm:px-6 lg:px-8 py-4 sm:py-8 md:py-8 lg:py-10 text-center">
@@ -387,7 +389,7 @@ export default function Page() {
 
         <WhyChooseUs />
         <OurTeam />
-
+<FAQPage />
 
         {/* Testimonials */}
         <section className="px-4 sm:px-6 lg:px-8 py-4 sm:py-8 md:py-8 lg:py-10 text-center">
