@@ -53,10 +53,10 @@ export default function WhyChooseUs() {
   ];
 
   return (
-    <div className=" mx-5 bg-gray-50 px-6 py-20">
+    <div className="   bg-[#0f0600] px-6 py-20">
       <div className="max-w-6xl mx-auto text-center">
-        <h1 className="text-4xl font-bold text-gray-800 mb-4">✅ Why Choose Us</h1>
-        <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+        <h1 className="text-4xl font-bold   text-white mb-4">✅ Why Choose Us</h1>
+        <p className="text-lg text-[#0c6bdd] max-w-2xl mx-auto">
           At Neosys Infosystems, we don’t just deliver service — we deliver peace of mind.
           Here’s why leading brands across India trust us as their after-sales service partner:
         </p>
@@ -64,13 +64,23 @@ export default function WhyChooseUs() {
 
       <div className="mt-16 grid sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
         {reasons.map((reason, index) => (
-          <div
-            key={index}
-            className={`border-t-4 ${reason.borderColor} rounded-xl bg-white p-6 shadow-md flex flex-col items-center text-center`}>
-            <div className="text-4xl mb-4">{reason.icon}</div>
-            <h3 className="text-xl font-semibold text-indigo-600 mb-2">{reason.title}</h3>
-            <p className="text-gray-700 text-sm">{reason.description}</p>
-          </div>
+         <div
+  key={index}
+  className={`group border-t-4 ${reason.borderColor} rounded-xl bg-white p-6 shadow-md flex flex-col items-center text-center 
+  transition-all duration-300 hover:bg-gradient-to-br hover:from-[#0f172a] hover:to-[#1e3a8a] hover:text-white`}
+>
+  <div className="text-4xl mb-4 transition-colors duration-300 group-hover:text-white">
+    {reason.icon}
+  </div>
+  <h3 className="text-xl font-semibold text-indigo-600 mb-2 transition-colors duration-300 group-hover:text-white">
+    {reason.title}
+  </h3>
+  <p className="text-gray-700 text-sm transition-colors duration-300 group-hover:text-white">
+    {reason.description}
+  </p>
+</div>
+
+
         ))}
       </div>
     </div>
