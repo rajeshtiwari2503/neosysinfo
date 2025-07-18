@@ -12,6 +12,8 @@ import OurTeam from "./components/OurTeam";
 import { motion } from 'framer-motion'
 import ServiceHighlights from "./components/ServiceHighlight";
 import FAQPage from "./components/Faqs";
+import { FaTools, FaShieldAlt, FaGlobeAsia } from "react-icons/fa";
+
 
 export default function Page() {
   const router = useRouter();
@@ -104,7 +106,7 @@ export default function Page() {
           </div>
         </section>
 
-        <section className="bg-gradient-to-br from-white via-sky-50 to-indigo-50 py-10 px-6">
+        {/* <section className="bg-gradient-to-br from-white via-sky-50 to-indigo-50 py-10 px-6">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -138,250 +140,354 @@ export default function Page() {
               Our <strong>pan-India service network</strong> and <strong>expert technicians</strong> ensure satisfaction at every doorstep.
             </motion.p>
           </motion.div>
-        </section>
-<ServiceHighlights />
-
-
-        {/* <section className="px-4 sm:px-6 lg:px-8 py-4 sm:py-8 md:py-8 lg:py-10 text-center">
-          <GradientCard>
-            <div className="max-w-6xl mx-auto text-center">
-              <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 leading-tight text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">
-                Streamlined After-Sales Service Management
-              </h1>
-              <p className="text-lg sm:text-xl md:text-2xl mb-8 text-secondary">
-                Neosys Infosystems delivers smart tools to manage warranties, service centers, and customer support — all in one platform.
-              </p>
-              <button
-                onClick={() => router.push("/contact")}
-                className="bg-white hover:bg-primary hover:text-white font-bold py-3 px-6 rounded-xl shadow-xl transition duration-300 transform hover:scale-105"
-              >
-                Request a Demo
-              </button>
-            </div>
-          </GradientCard>
         </section> */}
+     <section className="px-4 sm:px-6 lg:px-8 py-8  md:py-20   text-center bg-[#000000]">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="max-w-6xl mx-auto text-center mb-12"
+          >
+            <h2 className="text-3xl sm:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">
+            About Neosys Infosystems
+            </h2>
+            {/* <p className="text-gray-300 mt-4 text-lg">
+              A complete ecosystem to handle product servicing, customer interactions, and feedback loops.
+            </p> */}
+          </motion.div>
 
-        {/* Features */}
-        {/* <section className="px-4 sm:px-6 lg:px-8 py-4 sm:py-8 md:py-8 lg:py-10 text-center">
-          <div className="max-w-6xl mx-auto text-center mb-12">
+          <motion.div
+            initial="hidden"
+            whileInView="show"
+            variants={{
+              hidden: {},
+              show: {
+                transition: {
+                  staggerChildren: 0.15,
+                },
+              },
+            }}
+            className="grid grid-cols-1 md:grid-cols-3 gap-8"
+          >
+            {[
+              {
+               
+                description: "At Neosys Infosystems, we specialize in delivering fast, reliable, and professional after-sales service for home appliances, electronics, and IT devices.",
+                borderColor: "border-blue-400",
+                   icon: <FaTools className="w-8 h-8 text-blue-600" />,
+                hoverBg: "group-hover:bg-blue-500",
+              },
+              {
+              
+                description: "Backed by years of industry experience and trusted by top OEM brands, we ensure timely repair, seamless installation, AMC support, and genuine spare parts management—so your products stay in perfect condition, always",
+                borderColor: "border-green-400",
+               icon: <FaShieldAlt className="w-8 h-8 text-green-600" />,
+                bgColor: "bg-green-100",
+                hoverBg: "group-hover:bg-green-500",
+              },
+              {
+                
+                description: "Whether you're a customer, OEM, or dealer—we’ve got the right service solution tailored to your needs. Our pan-India service network and expert technicians ensure satisfaction at every doorstep.",
+                borderColor: "border-blue-200",
+             icon: <FaGlobeAsia className="w-8 h-8 text-blue-500" />,
+                bgColor: "bg-blue-100",
+                hoverBg: "group-hover:bg-blue-400",
+              },
+            
+            ].map((f, i) => (
+       <motion.div
+  key={i}
+  variants={{
+    hidden: { opacity: 0, y: 40 },
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: 'easeOut' },
+    },
+  }}
+  className={`relative group overflow-hidden cursor-pointer rounded-md bg-[#0E2237] p-8 text-center shadow-lg border ${f.borderColor} flex flex-col justify-between min-h-[360px]`}
+>
+  {/* Hover overlay */}
+  <div className="absolute inset-0 bg-white/10 h-0 group-hover:h-full transition-all duration-500 ease-in-out z-0"></div>
+
+  {/* Content */}
+  <div className="relative z-10 flex flex-col flex-grow items-center">
+    <div className={`w-16 h-16 rounded-full flex items-center justify-center mb-4 ${f.bgColor}`}>
+      {f.icon}
+    </div>
+    <p className="text-sm text-gray-300">{f.description}</p>
+
+    {/* Bottom Arrow */}
+    <div className="mt-auto pt-6">
+      <div className="bg-blue-600 text-white p-3 rounded-full transition">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="currentColor"
+          className="w-4 h-4"
+          viewBox="0 0 16 16"
+        >
+          <path
+            fillRule="evenodd"
+            d="M6.854 3.646a.5.5 0 0 1 .707 0L12 8.086V5.5a.5.5 0 0 1 1 0v4A.5.5 0 0 1 12.5 10h-4a.5.5 0 0 1 0-1h2.586L7.207 4.354a.5.5 0 0 1 0-.708z"
+          />
+        </svg>
+      </div>
+    </div>
+  </div>
+</motion.div>
+
+
+
+            ))}
+          </motion.div>
+        </section>
+
+        <ServiceHighlights />
+
+
+      
+
+        {/* <section className="px-4 sm:px-6 lg:px-8 py-4 sm:py-8 md:py-8 lg:py-10 text-center bg-gray-50">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="max-w-6xl mx-auto text-center mb-12"
+          >
             <h2 className="text-3xl sm:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">
               Key Features
             </h2>
             <p className="text-gray-600 mt-4 text-lg">
               A complete ecosystem to handle product servicing, customer interactions, and feedback loops.
             </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          </motion.div>
+
+          <motion.div
+            initial="hidden"
+            whileInView="show"
+            // viewport={{ once: true }}
+            variants={{
+              hidden: {},
+              show: {
+                transition: {
+                  staggerChildren: 0.15,
+                },
+              },
+            }}
+            className="grid grid-cols-1 md:grid-cols-3 gap-8"
+          >
             {[
               {
                 title: "Warranty Tracking",
                 description: "Easily manage product warranties and validate customer claims with accurate records.",
-                 borderColor: "border-blue-400",
+                borderColor: "border-blue-400",
+                icon: "/Logo.png",
+                bgColor: "bg-blue-100",
+                hoverBg: "group-hover:bg-blue-500",
               },
               {
                 title: "Service Request Management",
                 description: "Centralized dashboard to handle service complaints and technician assignments.",
-                 borderColor: "border-green-400",
+                borderColor: "border-green-400",
+                icon: "/Logo.png",
+                bgColor: "bg-green-100",
+                hoverBg: "group-hover:bg-green-500",
               },
               {
                 title: "Customer Support Hub",
                 description: "Efficient ticketing system for resolving customer issues faster and smarter.",
-                 borderColor: "border-blue-200",
+                borderColor: "border-blue-200",
+                icon: "/Logo.png",
+                bgColor: "bg-blue-100",
+                hoverBg: "group-hover:bg-blue-400",
               },
               {
                 title: "Feedback & Ratings",
                 description: "Collect customer reviews and satisfaction ratings to improve service quality.",
-                  borderColor: "border-purple-400",
+                borderColor: "border-purple-400",
+                icon: "/Logo.png",
+                bgColor: "bg-purple-100",
+                hoverBg: "group-hover:bg-purple-500",
               },
               {
                 title: "Real-Time Notifications",
                 description: "Keep customers and service centers updated with automated alerts and messages.",
                 borderColor: "border-yellow-400",
+                icon: "/Logo.png",
+                bgColor: "bg-yellow-100",
+                hoverBg: "group-hover:bg-yellow-400",
               },
               {
                 title: "Reports & Analytics",
                 description: "Monitor performance with detailed reports on service timelines, customer satisfaction, and more.",
-                  borderColor: "border-green-400",
+                borderColor: "border-green-400",
+                icon: "/Logo.png",
+                bgColor: "bg-green-100",
+                hoverBg: "group-hover:bg-green-500",
               },
             ].map((f, i) => (
-              <div key={i}>
-                <div className={`border-t-4 ${f.borderColor} rounded-xl bg-white p-6 shadow-md flex flex-col items-center text-center`}>
-                  <h3 className="text-xl font-semibold mb-2 text-[#0c4b6e]">{f.title}</h3>
+              <motion.div
+                key={i}
+                variants={{
+                  hidden: { opacity: 0, y: 40 },
+                  show: {
+                    opacity: 1,
+                    y: 0,
+                    transition: {
+                      duration: 0.6,
+                      ease: 'easeOut',
+                    },
+                  },
+                }}
+              >
+                <div
+                  className={`group border-t-4 ${f.borderColor} rounded-xl bg-white p-6 shadow-md flex flex-col items-center text-center transition-transform transform duration-300 hover:scale-105`}
+                >
+                  <div
+                    className={`w-16 h-16 rounded-full flex items-center justify-center mb-4 transition-all duration-300 transform group-hover:scale-110 ${f.bgColor} ${f.hoverBg}`}
+                  >
+                    <img src={f.icon} alt={f.title} className="w-8 h-8 transition-transform duration-300" />
+                  </div>
+                  <h3 className="text-xl font-semibold mb-2 text-[#0c4b6e] group-hover:text-primary">{f.title}</h3>
                   <p className="text-gray-600">{f.description}</p>
                 </div>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </section> */}
 
-      <section className="px-4 sm:px-6 lg:px-8 py-4 sm:py-8 md:py-8 lg:py-10 text-center bg-gray-50">
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        viewport={{ once: true }}
-        className="max-w-6xl mx-auto text-center mb-12"
-      >
-        <h2 className="text-3xl sm:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">
-          Key Features
-        </h2>
-        <p className="text-gray-600 mt-4 text-lg">
-          A complete ecosystem to handle product servicing, customer interactions, and feedback loops.
-        </p>
-      </motion.div>
-
-      <motion.div
-        initial="hidden"
-        whileInView="show"
-        // viewport={{ once: true }}
-        variants={{
-          hidden: {},
-          show: {
-            transition: {
-              staggerChildren: 0.15,
-            },
-          },
-        }}
-        className="grid grid-cols-1 md:grid-cols-3 gap-8"
-      >
-       {[
-                {
-                  title: "Warranty Tracking",
-                  description: "Easily manage product warranties and validate customer claims with accurate records.",
-                  borderColor: "border-blue-400",
-                  icon: "/Logo.png",
-                  bgColor: "bg-blue-100",
-                  hoverBg: "group-hover:bg-blue-500",
-                },
-                {
-                  title: "Service Request Management",
-                  description: "Centralized dashboard to handle service complaints and technician assignments.",
-                  borderColor: "border-green-400",
-                  icon: "/Logo.png",
-                  bgColor: "bg-green-100",
-                  hoverBg: "group-hover:bg-green-500",
-                },
-                {
-                  title: "Customer Support Hub",
-                  description: "Efficient ticketing system for resolving customer issues faster and smarter.",
-                  borderColor: "border-blue-200",
-                  icon: "/Logo.png",
-                  bgColor: "bg-blue-100",
-                  hoverBg: "group-hover:bg-blue-400",
-                },
-                {
-                  title: "Feedback & Ratings",
-                  description: "Collect customer reviews and satisfaction ratings to improve service quality.",
-                  borderColor: "border-purple-400",
-                  icon: "/Logo.png",
-                  bgColor: "bg-purple-100",
-                  hoverBg: "group-hover:bg-purple-500",
-                },
-                {
-                  title: "Real-Time Notifications",
-                  description: "Keep customers and service centers updated with automated alerts and messages.",
-                  borderColor: "border-yellow-400",
-                  icon: "/Logo.png",
-                  bgColor: "bg-yellow-100",
-                  hoverBg: "group-hover:bg-yellow-400",
-                },
-                {
-                  title: "Reports & Analytics",
-                  description: "Monitor performance with detailed reports on service timelines, customer satisfaction, and more.",
-                  borderColor: "border-green-400",
-                  icon: "/Logo.png",
-                  bgColor: "bg-green-100",
-                  hoverBg: "group-hover:bg-green-500",
-                },
-              ].map((f, i) => (
+        <section className="px-4 sm:px-6 lg:px-8 py-4 sm:py-8 md:py-8 lg:py-10 text-center bg-[#081B2B]">
           <motion.div
-            key={i}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="max-w-6xl mx-auto text-center mb-12"
+          >
+            <h2 className="text-3xl sm:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">
+              Key Features
+            </h2>
+            <p className="text-gray-300 mt-4 text-lg">
+              A complete ecosystem to handle product servicing, customer interactions, and feedback loops.
+            </p>
+          </motion.div>
+
+          <motion.div
+            initial="hidden"
+            whileInView="show"
             variants={{
-              hidden: { opacity: 0, y: 40 },
+              hidden: {},
               show: {
-                opacity: 1,
-                y: 0,
                 transition: {
-                  duration: 0.6,
-                  ease: 'easeOut',
+                  staggerChildren: 0.15,
                 },
               },
             }}
+            className="grid grid-cols-1 md:grid-cols-3 gap-8"
           >
-            <div
-              className={`group border-t-4 ${f.borderColor} rounded-xl bg-white p-6 shadow-md flex flex-col items-center text-center transition-transform transform duration-300 hover:scale-105`}
-            >
-              <div
-                className={`w-16 h-16 rounded-full flex items-center justify-center mb-4 transition-all duration-300 transform group-hover:scale-110 ${f.bgColor} ${f.hoverBg}`}
+            {[
+              {
+                title: "Warranty Tracking",
+                description: "Easily manage product warranties and validate customer claims with accurate records.",
+                borderColor: "border-blue-400",
+                icon: "/Logo.png",
+                bgColor: "bg-blue-100",
+                hoverBg: "group-hover:bg-blue-500",
+              },
+              {
+                title: "Service Request Management",
+                description: "Centralized dashboard to handle service complaints and technician assignments.",
+                borderColor: "border-green-400",
+                icon: "/Logo.png",
+                bgColor: "bg-green-100",
+                hoverBg: "group-hover:bg-green-500",
+              },
+              {
+                title: "Customer Support Hub",
+                description: "Efficient ticketing system for resolving customer issues faster and smarter.",
+                borderColor: "border-blue-200",
+                icon: "/Logo.png",
+                bgColor: "bg-blue-100",
+                hoverBg: "group-hover:bg-blue-400",
+              },
+              {
+                title: "Feedback & Ratings",
+                description: "Collect customer reviews and satisfaction ratings to improve service quality.",
+                borderColor: "border-purple-400",
+                icon: "/Logo.png",
+                bgColor: "bg-purple-100",
+                hoverBg: "group-hover:bg-purple-500",
+              },
+              {
+                title: "Real-Time Notifications",
+                description: "Keep customers and service centers updated with automated alerts and messages.",
+                borderColor: "border-yellow-400",
+                icon: "/Logo.png",
+                bgColor: "bg-yellow-100",
+                hoverBg: "group-hover:bg-yellow-400",
+              },
+              {
+                title: "Reports & Analytics",
+                description: "Monitor performance with detailed reports on service timelines, customer satisfaction, and more.",
+                borderColor: "border-green-400",
+                icon: "/Logo.png",
+                bgColor: "bg-green-100",
+                hoverBg: "group-hover:bg-green-500",
+              },
+            ].map((f, i) => (
+              <motion.div
+                key={i}
+                variants={{
+                  hidden: { opacity: 0, y: 40 },
+                  show: {
+                    opacity: 1,
+                    y: 0,
+                    transition: {
+                      duration: 0.6,
+                      ease: 'easeOut',
+                    },
+                  },
+                }}
+                className={`relative group overflow-hidden cursor-pointer rounded-t-[120px] rounded-b-xl bg-[#0E2237] p-8 text-center shadow-lg border-t-4 ${f.borderColor}`}
               >
-                <img src={f.icon} alt={f.title} className="w-8 h-8 transition-transform duration-300" />
-              </div>
-              <h3 className="text-xl font-semibold mb-2 text-[#0c4b6e] group-hover:text-primary">{f.title}</h3>
-              <p className="text-gray-600">{f.description}</p>
-            </div>
-          </motion.div>
-        ))}
-      </motion.div>
-    </section>
+                {/* Animated overlay from bottom to top */}
+                <div className="absolute inset-0 bg-white/10 h-0 group-hover:h-full transition-all duration-500 ease-in-out z-0"></div>
 
+                {/* Content Layer */}
+                <div className="relative z-10 flex flex-col items-center">
+                  <div
+                    className={`w-16 h-16 rounded-full flex items-center justify-center mb-4 ${f.bgColor}`}
+                  >
+                    <img src={f.icon} alt={f.title} className="w-8 h-8" />
+                  </div>
+                  <h3 className="text-xl font-bold mb-4 text-white">{f.title}</h3>
+                  <p className="text-sm text-gray-300">{f.description}</p>
 
-        {/* <ServicesPage /> */}
-
-
-        {/* Scale & Impact Section */}
-        {/* <section className="px-4 sm:px-6 lg:px-8 py-4 sm:py-8 md:py-8 lg:py-10 text-center">
-          <div className="max-w-6xl mx-auto text-center">
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">
-              Nationwide Reach & Real Results
-            </h2>
-            <p className="text-lg   text-gray-700 mb-8">
-              Neosys Infosystems supports after-sales operations across <span className="font-bold text-primary">600+ locations</span> and helps resolve over <span className="font-bold text-primary">1,000 service cases every month</span>.
-            </p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-              <GradientCard>
-                <h3 className="text-4xl font-extrabold text-primary mb-2">600+</h3>
-                <p className="text-gray-600">Service Locations Covered</p>
-              </GradientCard>
-              <GradientCard>
-                <h3 className="text-4xl font-extrabold text-primary mb-2">1,000+</h3>
-                <p className="text-gray-600">Service Requests Handled Monthly</p>
-              </GradientCard>
-              <GradientCard>
-                <h3 className="text-4xl font-extrabold text-primary mb-2">99.5%</h3>
-                <p className="text-gray-600">Customer Satisfaction Rate</p>
-              </GradientCard>
-            </div>
-          </div>
-        </section> */}
-
-        {/* How It Works */}
-        <section className="px-4 sm:px-6 lg:px-8 py-4 sm:py-8 md:py-8 lg:py-10 text-center">
-          <div className="text-center">
-            <h2 className="text-3xl sm:text-4xl font-bold mb-12 text-transparent bg-clip-text bg-gradient-to-r from-[#0c4b6e] to-[#6B7280]">
-              How Neosys After-Sales Platform Works
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {[
-                { step: 1, title: "Register Products", description: "Register customer products and their warranty details quickly." },
-                { step: 2, title: "Raise Service Requests", description: "Customers or agents can submit complaints or requests online." },
-                { step: 3, title: "Assign Technicians", description: "Easily assign service jobs to the nearest service centers or personnel." },
-                { step: 4, title: "Track Progress", description: "View real-time status of each service request and resolution steps." },
-                { step: 5, title: "Collect Feedback", description: "Gather customer reviews post-service to maintain quality." },
-                { step: 6, title: "Analyze & Improve", description: "Use insights to reduce turnaround time and boost satisfaction." },
-              ].map((item, index) => (
-                <GradientCard key={index}>
-                  <div className="flex items-center justify-center mb-4">
-                    <div className="text-white bg-gradient-to-r from-[#0c4b6e] to-[#6B7280] w-12 h-12 flex items-center justify-center rounded-full text-lg font-semibold shadow">
-                      {item.step}
+                  {/* Arrow Icon */}
+                  <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2">
+                    <div className="bg-blue-600 text-white p-3 rounded-full transition">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="currentColor"
+                        className="w-4 h-4"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          fillRule="evenodd"
+                          d="M6.854 3.646a.5.5 0 0 1 .707 0L12 8.086V5.5a.5.5 0 0 1 1 0v4A.5.5 0 0 1 12.5 10h-4a.5.5 0 0 1 0-1h2.586L7.207 4.354a.5.5 0 0 1 0-.708z"
+                        />
+                      </svg>
                     </div>
                   </div>
-                  <h3 className="text-xl font-semibold text-[#0c4b6e] mb-2">{item.title}</h3>
-                  <p className="text-gray-600">{item.description}</p>
-                </GradientCard>
-              ))}
-            </div>
-          </div>
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
         </section>
+
+ 
         <BrandsTrustPage />
         <ServiceNetwork />
         {/* <OurReach /> */}
@@ -389,7 +495,7 @@ export default function Page() {
 
         <WhyChooseUs />
         <OurTeam />
-<FAQPage />
+        <FAQPage />
 
         {/* Testimonials */}
         <section className="px-4 sm:px-6 lg:px-8 py-4 sm:py-8 md:py-8 lg:py-10 text-center">
