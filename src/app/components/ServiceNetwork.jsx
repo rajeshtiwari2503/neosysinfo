@@ -17,7 +17,7 @@ export default function ServiceNetwork() {
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 0.6 }}
-      className="mx-5 rounded-xl bg-gradient-to-r from-blue-500 to-blue-100 text-white px-10 py-10"
+      className="   bg-gradient-to-r from-blue-500 to-blue-100 text-white px-10 py-10"
     >
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-center">
         {/* Left Content */}
