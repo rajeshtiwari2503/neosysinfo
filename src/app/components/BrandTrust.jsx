@@ -20,31 +20,37 @@ const brands = [
 const brandSupportSteps = [
   {
     title: 'Understanding Brand Needs',
+     borderColor: "border-blue-400",
     description:
       'We collaborate with OEMs to understand their product lines, service SLAs, customer expectations, and geographic goals — ensuring our solutions are aligned with their brand standards.',
   },
   {
     title: '👨‍🔧 Deploying Skilled Service Teams',
+     borderColor: "border-blue-400",
     description:
       'Our trained technicians and regional service engineers are carefully assigned based on product expertise, local language familiarity, and TAT commitments — ensuring quality and speed.',
   },
   {
     title: '🔗 Integrated Workflow & CRM',
+     borderColor: "border-blue-400",
     description:
       'We use robust ticketing and CRM tools to manage service calls, escalations, customer feedback, and reporting. Brands can access real-time dashboards and performance metrics.',
   },
   {
     title: '🚚 Logistics & Parts Management',
+     borderColor: "border-blue-400",
     description:
       'We handle defective pickups, reverse logistics, and spare parts coordination efficiently — reducing delays and downtime for both brands and end users.',
   },
   {
     title: '📞 Customer Communication',
+     borderColor: "border-blue-400",
     description:
       'From service request to closure, we maintain transparent communication with customers through SMS, email, or WhatsApp updates — boosting satisfaction and trust.',
   },
   {
     title: '📊 Performance Review & Reporting',
+     borderColor: "border-blue-400",
     description:
       'We track service metrics like TAT, FTR (First-Time Resolution), and CSAT monthly — and provide detailed reports to our partner brands for full transparency.',
   },
@@ -52,11 +58,11 @@ const brandSupportSteps = [
 
 export default function BrandsTrustPage() {
   return (
-    <div className="min-h-screen bg-gray-50 px-6 py-16">
+    <div className="min-h-screen bg-[#000000] px-6 py-16">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <h1 className="text-4xl font-bold text-gray-800 mb-4">Brands That Trust Us</h1>
-          <p className="text-lg text-gray-600">
+          <h1 className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500 mb-4">Brands That Trust Us</h1>
+          <p className="text-lg text-white">
             Our after-sales service is trusted by some of the biggest names in the industry.
           </p>
         </div>
@@ -110,30 +116,38 @@ export default function BrandsTrustPage() {
 
         {/* Support Steps */}
         <div className="text-center mb-10">
-          <h2 className="text-3xl font-semibold text-gray-800 mb-4">How We Support Our Brand Partners</h2>
-          <p className="text-md text-gray-600 max-w-2xl mx-auto">
+          <h2 className="text-3xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500 mb-4">How We Support Our Brand Partners</h2>
+          <p className="text-md text-white max-w-2xl mx-auto">
             We go beyond just service — we deliver strategic after-sales support tailored to brand goals.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-10">
-          {brandSupportSteps.map((step, index) => {
-            const gradients = [
-              'bg-gradient-to-r from-blue-100 to-blue-500',
-              'bg-gradient-to-r from-cyan-100 to-blue-300',
-              'bg-gradient-to-r from-sky-100 to-cyan-200',
-            ];
-            return (
-              <div
-                key={index}
-                className={`p-6 rounded-xl shadow hover:shadow-md transition ${gradients[index % gradients.length]}`}
-              >
-                <h3 className="text-lg font-semibold text-indigo-700 mb-2">{step.title}</h3>
-                <p className="text-gray-800 text-sm">{step.description}</p>
-              </div>
-            );
-          })}
+      <div className="grid md:grid-cols-3  gap-10">
+  {brandSupportSteps.map((step, index) => {
+    const gradients = [
+      'bg-gradient-to-r from-blue-100 to-blue-500',
+      'bg-gradient-to-r from-cyan-100 to-blue-300',
+      'bg-gradient-to-r from-sky-100 to-cyan-200',
+    ];
+
+    return (
+      <div
+        key={index}
+        className={`relative group overflow-hidden cursor-pointer rounded-md bg-[#0E2237] p-12 text-center shadow-lg border ${step.borderColor} flex flex-col justify-between  `}
+      >
+        {/* Hover overlay */}
+        <div className="absolute inset-0 bg-white/10 h-0 group-hover:h-full transition-all duration-500 ease-in-out z-0"></div>
+
+        {/* Content on top of overlay */}
+        <div className="relative z-10">
+          <h3 className="text-lg font-semibold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500 mb-2">{step.title}</h3>
+          <p className="text-white text-sm">{step.description}</p>
         </div>
+      </div>
+    );
+  })}
+</div>
+
       </div>
     </div>
   );
